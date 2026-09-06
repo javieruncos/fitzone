@@ -1,19 +1,23 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { Header } from './components/Header';
+import { Hero } from './components/sections/Hero';
+import { Features } from './components/sections/Features';
+import { Programs } from './components/sections/Programs';
+import { About } from './components/sections/About';
+import { Footer } from './components/sections/Footer';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center" className='text-center pt-7'>
-       <h1 className='text-xl'>SR Gym Fitness</h1>
-      </section>
-    </>
-  )
+    <div className="min-h-screen bg-gym-dark text-gym-text">
+      <Header />
+      <main>
+        <Hero />
+        <Features />
+        <Programs />
+        <About />
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;

@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gym-dark: #0a0a0a;
+  --color-gym-surface: #141414;
+  --color-gym-border: #262626;
+  --color-gym-accent: #ffb800;
+  --color-gym-accent-hover: #ffd060;
+  --color-gym-text: #ffffff;
+  --color-gym-text-muted: #a1a1aa;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-gym-dark);
+  color: var(--color-gym-text);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
