@@ -1,5 +1,5 @@
 export function Button({ children, variant = 'primary', className = '', ...props }) {
-  const base = 'inline-flex items-center justify-center gap-2 font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer';
+  const base = 'inline-flex items-center justify-center gap-2 font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer rounded-md active:scale-[0.97]';
 
   const variants = {
     primary: 'bg-gym-accent text-black hover:bg-gym-accent-hover px-6 py-3',

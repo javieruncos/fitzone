@@ -1,6 +1,5 @@
 import { Header } from './components/Header';
 import { Hero } from './components/sections/Hero';
-import { Features } from './components/sections/Features';
 import { Programs } from './components/sections/Programs';
 import { About } from './components/sections/About';
 import { Footer } from './components/sections/Footer';
@@ -11,7 +10,6 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Features />
         <Programs />
         <About />
       </main>
