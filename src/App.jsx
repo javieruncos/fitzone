@@ -1,6 +1,8 @@
 import { Header } from './components/Header';
 import { Hero } from './components/sections/Hero';
 import { Programs } from './components/sections/Programs';
+import { Trainers } from './components/sections/Trainers';
+import { Memberships } from './components/sections/Memberships';
 import { About } from './components/sections/About';
 import { Footer } from './components/sections/Footer';
 
@@ -11,6 +13,8 @@ function App() {
       <main>
         <Hero />
         <Programs />
+        <Trainers />
+        <Memberships />
         <About />
       </main>
       <Footer />

@@ -1,6 +1,5 @@
 import { featuresData } from '../../data/gymData';
 import { Dumbbell, UserCheck, ClipboardList, Users } from 'lucide-react';
-import { Card } from '../ui/Card';
 
 const iconMap = {
   Dumbbell,
@@ -16,13 +15,13 @@ export function Features() {
         {featuresData.map((feature) => {
           const Icon = iconMap[feature.icon];
           return (
-            <Card key={feature.title} className="text-center">
+            <div key={feature.title} className="bg-gym-surface border border-gym-border rounded-none p-6 text-center">
               <Icon className="w-10 h-10 text-gym-accent mx-auto mb-3" />
               <h3 className="font-bold text-sm uppercase tracking-wider mb-2">
                 {feature.title}
               </h3>
               <p className="text-zinc-400 text-sm">{feature.description}</p>
-            </Card>
+            </div>
           );
         })}
       </div>

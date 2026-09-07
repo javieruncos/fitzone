@@ -36,9 +36,9 @@ export const programsData = [
   {
     id: 1,
     title: 'STRENGTH TRAINING',
-    description: 'Build lean muscle and increase overall strength.',
+    description: 'Build lean muscle and increase overall strength with progressive overload techniques and compound movements.',
     icon: 'Dumbbell',
-    image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg'
+    image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg',
   },
   {
     id: 2,
@@ -84,4 +84,92 @@ export const contactInfo = [
     title: 'OPENING HOURS',
     lines: ['Mon - Sat: 5:30 AM - 10:00 PM', 'Sunday: 6:00 AM - 1:00 PM']
   }
+];
+
+export const trainersData = [
+  {
+    id: 1,
+    name: 'Marcus Vance',
+    role: 'HEAD OF STRENGTH',
+    certifications: ['CSCS', 'USA-W'],
+    image: 'https://images.pexels.com/photos/1431283/pexels-photo-1431283.jpeg',
+    socials: { instagram: '#', tiktok: '#' },
+  },
+  {
+    id: 2,
+    name: 'Elena Rostova',
+    role: 'FUNCTIONAL & HYROX',
+    certifications: ['HYROX MASTER', 'CF-L2'],
+    image: 'https://images.pexels.com/photos/3820397/pexels-photo-3820397.jpeg',
+    socials: { instagram: '#', tiktok: '#' },
+  },
+  {
+    id: 3,
+    name: 'Jaxson Reed',
+    role: 'POWERLIFTING COACH',
+    certifications: ['IPL PRO', 'NSCA-CPT'],
+    image: 'https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg',
+    socials: { instagram: '#', tiktok: '#' },
+  },
+  {
+    id: 4,
+    name: 'Sarah Chen',
+    role: 'RECOVERY & MOBILITY',
+    certifications: ['EXOS', 'FMS'],
+    image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg',
+    socials: { instagram: '#', tiktok: '#' },
+  },
+];
+
+export const membershipsData = [
+  {
+    id: 1,
+    tag: 'SINGLE ACCESS',
+    name: 'DAY WARRIOR',
+    price: '15',
+    period: '/DAY',
+    featured: false,
+    features: [
+      'Full gym floor access',
+      'Locker room & showers',
+      'Free WiFi',
+      'One-time entry',
+    ],
+  },
+  {
+    id: 2,
+    tag: 'MOST POPULAR',
+    name: 'PRO ATHLETE',
+    price: '59',
+    period: '/MO',
+    badge: 'RECOMMENDED',
+    featured: true,
+    features: [
+      'Unlimited 24/7 gym access',
+      'All group classes included',
+      'Sauna & steam room',
+      '1 free coach session / month',
+      'Nutrition app access',
+      'Guest passes (2 / month)',
+      'Protein bar discounts',
+    ],
+  },
+  {
+    id: 3,
+    tag: 'FULL EXPERIENCE',
+    name: 'ELITE',
+    price: '99',
+    period: '/MO',
+    featured: false,
+    features: [
+      'Everything in Pro Athlete',
+      'Private recovery zone',
+      'Dedicated nutritionist',
+      'Monthly body composition scan',
+      'VIP locker with laundry',
+      'Guest passes (unlimited)',
+      'Priority class booking',
+      'Exclusive merchandise',
+    ],
+  },
 ];

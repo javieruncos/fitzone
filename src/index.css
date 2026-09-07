@@ -18,7 +18,7 @@ html {
 body {
   background-color: var(--color-gym-dark);
   color: var(--color-gym-text);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
 }
 
 * {
