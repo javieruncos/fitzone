@@ -1,7 +1,7 @@
 export function PricingCard({ tag, name, price, period, features, featured, badge }) {
   return (
     <div
-      className={`bg-gym-surface rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full relative ${
+      className={`bg-gym-surface rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full relative will-change-transform transform-gpu ${
         featured
           ? 'border-2 border-gym-accent shadow-[0_0_30px_rgba(234,179,8,0.15)] scale-[1.02] lg:-translate-y-2 z-10'
           : 'border border-gym-border'
@@ -46,7 +46,7 @@ export function PricingCard({ tag, name, price, period, features, featured, badg
 
       <a
         href="#membership"
-        className={`mt-8 min-h-[48px] flex items-center justify-center font-bold uppercase tracking-wider transition-colors transition-transform duration-200 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark ${
+        className={`mt-8 min-h-[48px] flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-200 ease-out active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark ${
           featured
             ? 'bg-gym-accent text-black font-black hover:bg-yellow-400'
             : 'bg-white/5 border border-gym-border text-white hover:border-gym-accent hover:text-gym-accent'

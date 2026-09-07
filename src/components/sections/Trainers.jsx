@@ -1,24 +1,30 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { trainersData } from '../../data/gymData';
 import { TrainerCard } from '../ui/TrainerCard';
 
 const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+    transition: {
+      staggerChildren: 0.04,
+      delayChildren: 0.05,
+    },
   },
 };
 
 export function Trainers() {
+  const reduceMotion = useReducedMotion();
+
+  const cardVariants = {
+    hidden: { opacity: 0, transform: reduceMotion ? 'translate3d(0, 0px, 0)' : 'translate3d(0, 16px, 0)' },
+    visible: {
+      opacity: 1,
+      transform: 'translate3d(0, 0px, 0)',
+      transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
     <section id="trainers" className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
@@ -35,11 +41,11 @@ export function Trainers() {
         </div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 will-change-transform contain-layout"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.05, margin: "0px 0px -50px 0px" }}
         >
           {trainersData.map((trainer) => (
             <motion.div

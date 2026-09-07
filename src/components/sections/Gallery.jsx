@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { membershipsData } from '../../data/gymData';
-import { PricingCard } from '../ui/PricingCard';
+import { galleryData } from '../../data/gymData';
+import { GalleryCard } from '../ui/GalleryCard';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -13,7 +13,7 @@ const containerVariants = {
   },
 };
 
-export function Memberships() {
+export function Gallery() {
   const reduceMotion = useReducedMotion();
 
   const cardVariants = {
@@ -26,40 +26,35 @@ export function Memberships() {
   };
 
   return (
-    <section id="membership" className="py-12 sm:py-16 lg:py-20">
+    <section id="gallery" className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="text-center mb-8 sm:mb-10">
           <p className="text-gym-accent font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">
-            Pricing Plans
+            Facilities
           </p>
-          <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight mb-4">
-            Join The Club.
+          <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight">
+            The Arena.
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-            Choose the membership that matches your goals. Every plan includes full access to our state-of-the-art facility and expert support.
-          </p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch will-change-transform contain-layout"
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[220px] sm:auto-rows-[260px] will-change-transform contain-layout"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.05, margin: "0px 0px -50px 0px" }}
         >
-          {membershipsData.map((plan) => (
+          {galleryData.map((item) => (
             <motion.div
-              key={plan.id}
+              key={item.id}
               variants={cardVariants}
+              className={item.span}
             >
-              <PricingCard
-                tag={plan.tag}
-                name={plan.name}
-                price={plan.price}
-                period={plan.period}
-                features={plan.features}
-                featured={plan.featured}
-                badge={plan.badge}
+              <GalleryCard
+                tag={item.tag}
+                title={item.title}
+                caption={item.caption}
+                image={item.image}
               />
             </motion.div>
           ))}

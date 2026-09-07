@@ -1,19 +1,38 @@
+import { motion, useReducedMotion } from 'framer-motion';
 import { Button } from '../ui/Button';
 
+const EASE = [0.16, 1, 0.3, 1];
+
 export function About() {
+  const reduceMotion = useReducedMotion();
+
+  const y = reduceMotion ? 0 : 16;
+
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 bg-gym-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gym-border">
+          <motion.div
+            initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+            whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: EASE }}
+            className="aspect-[4/3] rounded-2xl overflow-hidden bg-gym-border"
+          >
             <img
               src="/src/assets/images/about.jpg"
               alt="Gym interior"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
 
-          <div className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+            whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.15, ease: EASE }}
+            className="space-y-6"
+          >
             <p className="text-gym-accent font-semibold text-sm uppercase tracking-wider">
               About Us
             </p>
@@ -27,7 +46,7 @@ export function About() {
               Our state-of-the-art facility features the latest equipment, spacious workout areas, and everything you need for a complete fitness experience.
             </p>
             <Button>Join Our Community</Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

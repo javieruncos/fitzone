@@ -62,7 +62,7 @@ export function Header() {
       {/* 3. BOTÓN CTA DESKTOP (Pantallas lg+) */}
       <a
         href="#membership"
-        className="hidden lg:inline-flex items-center justify-center bg-yellow-500 text-black font-black text-xs tracking-wider uppercase px-6 py-2.5 rounded-md hover:bg-yellow-400 active:scale-[0.97] transition-all duration-200 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
+        className="hidden lg:inline-flex items-center justify-center bg-yellow-500 text-black font-black text-xs tracking-wider uppercase px-6 py-2.5 rounded-md hover:bg-yellow-400 active:scale-[0.98] transition-[color,transform] duration-200 ease-out shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
       >
         JOIN NOW
       </a>

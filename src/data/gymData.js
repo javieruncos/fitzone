@@ -173,3 +173,46 @@ export const membershipsData = [
     ],
   },
 ];
+
+export const galleryData = [
+  {
+    id: 1,
+    tag: 'ZONE 01',
+    title: 'MAIN ATHLETIC FLOOR',
+    caption: 'Heavy Iron & Powerlifting Racks',
+    image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg',
+    span: 'col-span-1 md:col-span-2 row-span-2',
+  },
+  {
+    id: 2,
+    tag: 'ZONE 02',
+    title: 'RECOVERY & SAUNA',
+    caption: 'Infrared Sauna & Ice Baths',
+    image: 'https://images.pexels.com/photos/3820397/pexels-photo-3820397.jpeg',
+    span: 'col-span-1 md:col-span-1 row-span-1',
+  },
+  {
+    id: 3,
+    tag: 'ZONE 03',
+    title: 'FUNCTIONAL & HYROX',
+    caption: 'Turf Track & Cardio Rig',
+    image: 'https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg',
+    span: 'col-span-1 md:col-span-1 row-span-1',
+  },
+  {
+    id: 4,
+    tag: 'ZONE 04',
+    title: 'CARDIO DECK',
+    caption: 'State-of-the-art Treadmills',
+    image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg',
+    span: 'col-span-1 md:col-span-1 row-span-1',
+  },
+  {
+    id: 5,
+    tag: 'ZONE 05',
+    title: 'PRIVATE COACHING STUDIO',
+    caption: '1-on-1 Assessment Zone',
+    image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg',
+    span: 'col-span-1 md:col-span-1 row-span-1',
+  },
+];

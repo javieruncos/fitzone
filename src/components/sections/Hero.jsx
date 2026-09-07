@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from 'framer-motion';
 import { Play, Dumbbell, UserCheck, ClipboardList, Users } from 'lucide-react';
 import { featuresData } from '../../data/gymData';
 
@@ -8,7 +9,13 @@ const iconMap = {
   Users,
 };
 
+const EASE = [0.16, 1, 0.3, 1];
+
 export function Hero() {
+  const reduceMotion = useReducedMotion();
+
+  const y = reduceMotion ? 0 : 16;
+
   return (
     <section
       id="home"
@@ -39,24 +46,44 @@ export function Hero() {
 
       {/* 4. BLOQUE DE CONTENIDO PRINCIPAL */}
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full pt-12 pb-8 z-20 flex-1 flex flex-col justify-center">
-        <p className="text-white font-bold text-sm sm:text-base uppercase tracking-wide sm:tracking-widest mb-3">
+        <motion.p
+          initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, ease: EASE }}
+          className="text-white font-bold text-sm sm:text-base uppercase tracking-wide sm:tracking-widest mb-3"
+        >
           BUILD STRENGTH.<br />
           BUILD CONFIDENCE.
-        </p>
+        </motion.p>
 
-        <h1 className="font-black text-5xl sm:text-6xl lg:text-8xl uppercase tracking-tighter leading-[0.9] mb-4">
+        <motion.h1
+          initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.1, ease: EASE }}
+          className="font-black text-5xl sm:text-6xl lg:text-8xl uppercase tracking-tighter leading-[0.9] mb-4"
+        >
           BECOME <span className="text-gym-accent">YOUR BEST</span>
-        </h1>
+        </motion.h1>
 
-        <p className="text-zinc-300 text-sm sm:text-base max-w-md mb-8 leading-relaxed">
+        <motion.p
+          initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
+          className="text-zinc-300 text-sm sm:text-base max-w-md mb-8 leading-relaxed"
+        >
           Join a community that pushes you, supports you and helps you
           become the strongest version of yourself.
-        </p>
+        </motion.p>
 
-        <div className="flex flex-wrap items-center gap-3 sm:gap-5">
+        <motion.div
+          initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+          animate={{ opacity: 1, transform: 'translateY(0px)' }}
+          transition={{ duration: 0.5, delay: 0.3, ease: EASE }}
+          className="flex flex-wrap items-center gap-3 sm:gap-5"
+        >
           <a
             href="#membership"
-            className="bg-gym-accent text-black font-black text-xs tracking-wider uppercase px-7 py-3.5 rounded-md hover:bg-gym-accent-hover active:scale-[0.97] transition-colors transition-transform flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark"
+            className="bg-gym-accent text-black font-black text-xs tracking-wider uppercase px-7 py-3.5 rounded-md hover:bg-gym-accent-hover active:scale-[0.98] transition-[color,transform] duration-200 ease-out flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark"
           >
             JOIN NOW
             <span aria-hidden="true">&rarr;</span>
@@ -65,18 +92,23 @@ export function Hero() {
           <button
             type="button"
             aria-label="Watch promotional video"
-            className="flex items-center gap-3 text-white font-bold text-xs tracking-widest uppercase hover:text-gym-accent transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark rounded-md"
+            className="flex items-center gap-3 text-white font-bold text-xs tracking-widest uppercase hover:text-gym-accent transition-colors duration-200 ease-out group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark rounded-md"
           >
-            <span className="w-11 h-11 rounded-full border border-white/40 flex items-center justify-center group-hover:border-gym-accent transition-colors">
+            <span className="w-11 h-11 rounded-full border border-white/40 flex items-center justify-center group-hover:border-gym-accent transition-colors duration-200 ease-out">
               <Play className="w-4 h-4 fill-current" />
             </span>
             WATCH VIDEO
           </button>
-        </div>
+        </motion.div>
       </div>
 
       {/* 5. TARJETA FLotante DE FEATURES */}
-      <div className="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-8 lg:pb-12 z-20">
+      <motion.div
+        initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+        animate={{ opacity: 1, transform: 'translateY(0px)' }}
+        transition={{ duration: 0.5, delay: 0.4, ease: EASE }}
+        className="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-8 lg:pb-12 z-20"
+      >
         <div className="bg-gym-surface/90 backdrop-blur-md border border-gym-border rounded-2xl p-4 sm:p-6 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-gym-border">
           {featuresData.map((feature) => {
             const Icon = iconMap[feature.icon];
@@ -98,7 +130,7 @@ export function Hero() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
