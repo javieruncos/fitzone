@@ -1,34 +1,43 @@
-export function Card({ image, alt, icon, title, description, href = '#', className = '' }) {
+import { ArrowRight } from 'lucide-react';
+
+export function Card({ image, alt, zone, title, description, href = '#', className = '' }) {
   return (
-    <div className={`bg-gym-surface border border-gym-border rounded-xl overflow-hidden flex flex-col h-full group ${className}`}>
-      <div className="overflow-hidden">
+    <a
+      href={href}
+      className={`group relative block overflow-hidden rounded-lg ${className}`}
+    >
+      <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={image}
           alt={alt}
+          width="480"
+          height="600"
           loading="lazy"
           decoding="async"
-          className="w-full h-48 sm:h-52 object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
         />
-      </div>
-      <div className="p-5 flex flex-col justify-between flex-1">
-        <div>
-          <div className="flex items-center">
-            {icon}
-            <h3 className="text-white font-bold text-sm sm:text-base uppercase tracking-wider">
-              {title}
-            </h3>
-          </div>
-          <p className="text-zinc-400 text-xs sm:text-sm mt-2 mb-6 line-clamp-2">
-            {description}
-          </p>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+        <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6">
+          {zone && (
+            <span className="text-gym-accent font-mono text-xs tracking-widest uppercase mb-2">
+              {zone}
+            </span>
+          )}
+          <h3 className="text-white font-bold text-base sm:text-lg uppercase tracking-wide mb-1.5">
+            {title}
+          </h3>
+          {description && (
+            <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[280px] mb-3">
+              {description}
+            </p>
+          )}
+          <span className="inline-flex items-center gap-2 text-white/0 group-hover:text-white/80 transition-colors duration-300 text-xs sm:text-sm font-medium">
+            Explore <ArrowRight size={14} />
+          </span>
         </div>
-        <a
-          href={href}
-          className="text-gym-accent font-bold text-xs sm:text-sm uppercase tracking-wider hover:underline active:scale-[0.98] transition-[color,transform] duration-200 ease-out flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark"
-        >
-          Learn More <span aria-hidden="true">&rarr;</span>
-        </a>
       </div>
-    </div>
+    </a>
   );
 }

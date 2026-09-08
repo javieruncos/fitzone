@@ -1,16 +1,15 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { programsData } from '../../data/gymData';
-import { Dumbbell, Flame, Activity, Flower2 } from 'lucide-react';
 import { Card } from '../ui/Card';
 
-const iconMap = { Dumbbell, Flame, Activity, Flower2 };
+const EASE = [0.16, 1, 0.3, 1];
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.04,
+      staggerChildren: 0.06,
       delayChildren: 0.05,
     },
   },
@@ -28,7 +27,7 @@ export function Programs() {
       transform: 'translate3d(0, 0px, 0)',
       transition: reduceMotion
         ? { duration: 0 }
-        : { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+        : { duration: 0.25, ease: EASE },
     },
   };
 
@@ -39,41 +38,37 @@ export function Programs() {
           <p className="text-gym-accent font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">
             Our Programs
           </p>
-          <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight mb-4">
+          <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tighter leading-[0.9] mb-4">
             Train. Focus. Achieve.
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-            Structured training paths designed to push your limits. From strength to endurance, every program is engineered for results.
+            Structured training paths designed to push your limits. Every program engineered for results.
           </p>
         </div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.05, margin: "0px 0px -50px 0px" }}
+          viewport={{ once: true, amount: 0.05, margin: '0px 0px -50px 0px' }}
         >
-          {programsData.map((program) => {
-            const Icon = iconMap[program.icon];
-
-            return (
-              <motion.div
-                key={program.id}
-                variants={cardVariants}
-                className="h-full"
-              >
-                <Card
-                  image={program.image}
-                  alt={`${program.title} session at FitZone gym`}
-                  icon={<Icon className="text-gym-accent w-6 h-6 shrink-0 mr-3" />}
-                  title={program.title}
-                  description={program.description}
-                  href="#membership"
-                />
-              </motion.div>
-            );
-          })}
+          {programsData.map((program) => (
+            <motion.div
+              key={program.id}
+              variants={cardVariants}
+              className="h-full"
+            >
+              <Card
+                image={program.image}
+                alt={`${program.title} session at FitZone gym`}
+                zone={program.zone}
+                title={program.title}
+                description={program.description}
+                href="#membership"
+              />
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

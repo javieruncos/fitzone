@@ -34,32 +34,32 @@ export const featuresData = [
 export const programsData = [
   {
     id: 1,
+    zone: '01',
     title: 'STRENGTH TRAINING',
-    description: 'Build lean muscle and increase overall strength with progressive overload techniques and compound movements.',
-    icon: 'Dumbbell',
+    description: 'Progressive overload and compound movements for serious strength.',
     image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg',
   },
   {
     id: 2,
+    zone: '02',
     title: 'WEIGHT LOSS',
     description: 'Effective fat loss programs for a healthier you.',
-    icon: 'Flame',
-    image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg'
+    image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg',
   },
   {
     id: 3,
+    zone: '03',
     title: 'FUNCTIONAL TRAINING',
     description: 'Improve mobility, endurance and everyday performance.',
-    icon: 'Activity',
-    image: 'https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg'
+    image: 'https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg',
   },
   {
     id: 4,
+    zone: '04',
     title: 'YOGA & WELLNESS',
     description: 'Balance your body and mind with yoga and stretching.',
-    icon: 'Flower2',
-    image: 'https://images.pexels.com/photos/3822677/pexels-photo-3822677.jpeg'
-  }
+    image: 'https://images.pexels.com/photos/3822677/pexels-photo-3822677.jpeg',
+  },
 ];
 
 export const contactInfo = [
