@@ -5,8 +5,6 @@ export const navLinks = [
   { name: 'TRAINERS', href: '#trainers' },
   { name: 'MEMBERSHIP', href: '#membership' },
   { name: 'GALLERY', href: '#gallery' },
-  { name: 'BLOG', href: '#blog' },
-  { name: 'CONTACT', href: '#contact' },
 ];
 
 export const featuresData = [

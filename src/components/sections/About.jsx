@@ -13,24 +13,26 @@ export function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+            initial={reduceMotion ? false : { opacity: 0, transform: `translateY(${y}px)` }}
             whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: EASE }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 0.5, ease: EASE }}
             className="aspect-[4/3] rounded-2xl overflow-hidden bg-gym-border"
           >
             <img
               src="/src/assets/images/about.jpg"
               alt="Gym interior"
+              width="800"
+              height="600"
               className="w-full h-full object-cover"
             />
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, transform: `translateY(${y}px)` }}
+            initial={reduceMotion ? false : { opacity: 0, transform: `translateY(${y}px)` }}
             whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: 0.15, ease: EASE }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.15, ease: EASE }}
             className="space-y-6"
           >
             <p className="text-gym-accent font-semibold text-sm uppercase tracking-wider">

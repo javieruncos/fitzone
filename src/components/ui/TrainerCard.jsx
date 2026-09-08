@@ -1,7 +1,7 @@
 export function TrainerCard({ name, role, certifications, image, socials }) {
   return (
     <div className="bg-gym-surface border border-gym-border rounded-xl overflow-hidden relative group hover:border-gym-accent/50 transition-colors duration-300 flex flex-col justify-between h-full">
-      <div className="relative overflow-hidden will-change-transform transform-gpu">
+      <div className="relative overflow-hidden">
         <img
           src={image}
           alt={`${name} - ${role} at FitZone gym`}

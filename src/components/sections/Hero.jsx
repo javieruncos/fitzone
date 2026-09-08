@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Play, Dumbbell, UserCheck, ClipboardList, Users } from 'lucide-react';
 import { featuresData } from '../../data/gymData';
+import heroImage from '../../assets/hero.jpg';
 
 const iconMap = {
   Dumbbell,
@@ -23,7 +24,7 @@ export function Hero() {
     >
       {/* 1. IMAGEN DE FONDO — Full Size */}
       <img
-        src="/src/assets/hero.jpg"
+        src={heroImage}
         alt="Athlete training in a modern gym"
         width="1920"
         height="1080"

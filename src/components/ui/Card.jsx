@@ -1,7 +1,7 @@
 export function Card({ image, alt, icon, title, description, href = '#', className = '' }) {
   return (
     <div className={`bg-gym-surface border border-gym-border rounded-xl overflow-hidden flex flex-col h-full group ${className}`}>
-      <div className="overflow-hidden will-change-transform transform-gpu">
+      <div className="overflow-hidden">
         <img
           src={image}
           alt={alt}

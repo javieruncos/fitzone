@@ -1,7 +1,7 @@
 export function PricingCard({ tag, name, price, period, features, featured, badge }) {
   return (
     <div
-      className={`bg-gym-surface rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full relative will-change-transform transform-gpu ${
+      className={`bg-gym-surface rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full relative ${
         featured
           ? 'border-2 border-gym-accent shadow-[0_0_30px_rgba(234,179,8,0.15)] scale-[1.02] lg:-translate-y-2 z-10'
           : 'border border-gym-border'

@@ -1,6 +1,6 @@
 export function GalleryCard({ tag, title, caption, image }) {
   return (
-    <div className="group relative overflow-hidden rounded-xl bg-gym-surface border border-gym-border hover:border-gym-accent/50 transition-colors duration-300 h-full w-full will-change-transform transform-gpu">
+    <div className="group relative overflow-hidden rounded-xl bg-gym-surface border border-gym-border hover:border-gym-accent/50 transition-colors duration-300 h-full w-full">
       <img
         src={image}
         alt={`${title} at FitZone gym`}

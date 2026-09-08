@@ -17,11 +17,15 @@ export function Trainers() {
   const reduceMotion = useReducedMotion();
 
   const cardVariants = {
-    hidden: { opacity: 0, transform: reduceMotion ? 'translate3d(0, 0px, 0)' : 'translate3d(0, 16px, 0)' },
+    hidden: reduceMotion
+      ? { opacity: 1, transform: 'translate3d(0, 0px, 0)' }
+      : { opacity: 0, transform: 'translate3d(0, 16px, 0)' },
     visible: {
       opacity: 1,
       transform: 'translate3d(0, 0px, 0)',
-      transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+      transition: reduceMotion
+        ? { duration: 0 }
+        : { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
@@ -41,7 +45,7 @@ export function Trainers() {
         </div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 will-change-transform contain-layout"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
