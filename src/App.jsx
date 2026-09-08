@@ -4,6 +4,8 @@ import { Programs } from './components/sections/Programs';
 import { Trainers } from './components/sections/Trainers';
 import { Memberships } from './components/sections/Memberships';
 import { Gallery } from './components/sections/Gallery';
+import { Testimonials } from './components/sections/Testimonials';
+import { FAQ } from './components/sections/FAQ';
 import { About } from './components/sections/About';
 import { Footer } from './components/sections/Footer';
 
@@ -17,6 +19,8 @@ function App() {
         <Trainers />
         <Memberships />
         <Gallery />
+        <Testimonials />
+        <FAQ />
         <About />
       </main>
       <Footer />
