@@ -4,7 +4,7 @@ export const navLinks = [
   { name: 'PROGRAMS', href: '#programs' },
   { name: 'TRAINERS', href: '#trainers' },
   { name: 'MEMBERSHIP', href: '#membership' },
-  { name: 'GALLERY', href: '#gallery' },
+  { name: 'FACILITIES', href: '#facilities' },
   { name: 'FAQ', href: '#faq' },
 ];
 
@@ -173,46 +173,42 @@ export const membershipsData = [
   },
 ];
 
-export const galleryData = [
+export const facilitiesData = [
   {
     id: 1,
-    tag: 'ZONE 01',
-    title: 'MAIN ATHLETIC FLOOR',
-    caption: 'Heavy Iron & Powerlifting Racks',
+    zone: '01',
+    name: 'STRENGTH FLOOR',
+    description: 'Competition-grade equipment built for serious training. From Olympic platforms to power racks engineered for progressive overload.',
     image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg',
-    span: 'col-span-1 md:col-span-2 row-span-2',
+    featured: true,
   },
   {
     id: 2,
-    tag: 'ZONE 02',
-    title: 'RECOVERY & SAUNA',
-    caption: 'Infrared Sauna & Ice Baths',
-    image: 'https://images.pexels.com/photos/3820397/pexels-photo-3820397.jpeg',
-    span: 'col-span-1 md:col-span-1 row-span-1',
+    zone: '02',
+    name: 'FUNCTIONAL TRAINING',
+    description: 'Turf track, rigs, and performance tools designed for athletic conditioning and hybrid training disciplines.',
+    image: 'https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg',
   },
   {
     id: 3,
-    tag: 'ZONE 03',
-    title: 'FUNCTIONAL & HYROX',
-    caption: 'Turf Track & Cardio Rig',
-    image: 'https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg',
-    span: 'col-span-1 md:col-span-1 row-span-1',
+    zone: '03',
+    name: 'CARDIO ZONE',
+    description: 'Dedicated cardio equipment for endurance training.',
+    image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg',
   },
   {
     id: 4,
-    tag: 'ZONE 04',
-    title: 'CARDIO DECK',
-    caption: 'State-of-the-art Treadmills',
-    image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg',
-    span: 'col-span-1 md:col-span-1 row-span-1',
+    zone: '04',
+    name: 'FREE WEIGHTS',
+    description: 'Dumbbells, barbells and dedicated free-weight space.',
+    image: 'https://images.pexels.com/photos/3820397/pexels-photo-3820397.jpeg',
   },
   {
     id: 5,
-    tag: 'ZONE 05',
-    title: 'PRIVATE COACHING STUDIO',
-    caption: '1-on-1 Assessment Zone',
+    zone: '05',
+    name: 'LOCKER ROOMS',
+    description: 'Modern changing facilities designed for comfort.',
     image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg',
-    span: 'col-span-1 md:col-span-1 row-span-1',
   },
 ];
 

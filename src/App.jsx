@@ -3,7 +3,7 @@ import { Hero } from './components/sections/Hero';
 import { Programs } from './components/sections/Programs';
 import { Trainers } from './components/sections/Trainers';
 import { Memberships } from './components/sections/Memberships';
-import { Gallery } from './components/sections/Gallery';
+import { Facilities } from './components/sections/Facilities';
 import { Testimonials } from './components/sections/Testimonials';
 import { FAQ } from './components/sections/FAQ';
 import { About } from './components/sections/About';
@@ -18,7 +18,7 @@ function App() {
         <Programs />
         <Trainers />
         <Memberships />
-        <Gallery />
+        <Facilities />
         <Testimonials />
         <FAQ />
         <About />
