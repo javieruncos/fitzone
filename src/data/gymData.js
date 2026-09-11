@@ -298,3 +298,77 @@ export const faqData = [
     answer: 'We do. Our Beginner Foundation program guides you through proper form, routine structure, and nutrition basics over four weeks with dedicated coaching support.',
   },
 ];
+
+export const scheduleData = [
+  {
+    day: 'MON',
+    classes: [
+      { id: 1, time: '06:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 2, time: '07:30', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '45 MIN', level: 'INTERMEDIATE' },
+      { id: 3, time: '09:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 4, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'ALL LEVELS' },
+      { id: 5, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
+      { id: 6, time: '19:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+    ],
+  },
+  {
+    day: 'TUE',
+    classes: [
+      { id: 7, time: '06:30', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '45 MIN', level: 'ALL LEVELS' },
+      { id: 8, time: '08:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'BEGINNER' },
+      { id: 9, time: '10:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 10, time: '16:00', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '45 MIN', level: 'ALL LEVELS' },
+      { id: 11, time: '18:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'INTERMEDIATE' },
+    ],
+  },
+  {
+    day: 'WED',
+    classes: [
+      { id: 12, time: '06:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 13, time: '07:30', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '45 MIN', level: 'BEGINNER' },
+      { id: 14, time: '09:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 15, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'INTERMEDIATE' },
+      { id: 16, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
+      { id: 17, time: '19:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+    ],
+  },
+  {
+    day: 'THU',
+    classes: [
+      { id: 18, time: '06:30', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '45 MIN', level: 'ALL LEVELS' },
+      { id: 19, time: '08:00', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '60 MIN', level: 'INTERMEDIATE' },
+      { id: 20, time: '10:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 21, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
+      { id: 22, time: '19:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+    ],
+  },
+  {
+    day: 'FRI',
+    classes: [
+      { id: 23, time: '06:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 24, time: '07:30', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '45 MIN', level: 'ALL LEVELS' },
+      { id: 25, time: '09:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'BEGINNER' },
+      { id: 26, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'ALL LEVELS' },
+      { id: 27, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
+      { id: 28, time: '19:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'INTERMEDIATE' },
+    ],
+  },
+  {
+    day: 'SAT',
+    classes: [
+      { id: 29, time: '07:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 30, time: '09:00', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 31, time: '11:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '75 MIN', level: 'ALL LEVELS' },
+      { id: 32, time: '14:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
+      { id: 33, time: '16:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'BEGINNER' },
+    ],
+  },
+  {
+    day: 'SUN',
+    classes: [
+      { id: 34, time: '08:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '75 MIN', level: 'ALL LEVELS' },
+      { id: 35, time: '10:00', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 36, time: '12:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+    ],
+  },
+];

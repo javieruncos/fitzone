@@ -60,11 +60,11 @@ export function Facilities() {
   const [hero, left, ...rightCards] = facilitiesData;
 
   return (
-    <section id="facilities" className="py-20 sm:py-28 lg:py-36 bg-black">
+    <section id="facilities" className="py-16 sm:py-20 lg:py-24 bg-gym-dark border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
 
         {/* ── HEADER ────────────────────────────────────────── */}
-        <div className="text-left mb-12 sm:mb-16">
+        <div className="text-left mb-8 sm:mb-10">
           <motion.h2
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}

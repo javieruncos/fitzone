@@ -92,7 +92,7 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 sm:py-28 lg:py-36">
+    <section id="faq" className="py-16 sm:py-20 lg:py-24 border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start"

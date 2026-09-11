@@ -11,7 +11,7 @@ const iconMap = {
 export function Footer() {
   return (
     <footer className="bg-gym-surface border-t border-white/[0.06]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-12 sm:py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {contactInfo.map((info) => {
             const Icon = iconMap[info.icon];

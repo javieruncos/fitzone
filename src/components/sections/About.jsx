@@ -7,7 +7,7 @@ export function About() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="relative w-full min-h-[75vh] flex items-center justify-center overflow-hidden bg-black">
+    <section id="about" className="relative w-full min-h-[75vh] flex items-center justify-center overflow-hidden bg-gym-dark border-t border-white/[0.06]">
       {/* Imagen de fondo */}
       <img
         src={aboutImage}
@@ -32,7 +32,7 @@ export function About() {
       />
 
       {/* Contenido centrado */}
-      <div className="relative max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 w-full py-28 sm:py-36 text-center z-20 flex flex-col items-center">
+      <div className="relative max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 w-full py-16 sm:py-20 lg:py-24 text-center z-20 flex flex-col items-center">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ export function About() {
           </span>
 
           {/* Título */}
-          <h2 className="text-white font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight leading-[0.92] mb-6 max-w-3xl drop-shadow-lg">
+          <h2 className="text-white font-black text-4xl sm:text-6xl lg:text-7xl uppercase tracking-tight leading-[0.92] mb-3 max-w-3xl drop-shadow-lg">
             Where Strength Meets <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-zinc-500">Community</span>
           </h2>
 

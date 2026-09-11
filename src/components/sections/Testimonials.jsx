@@ -102,9 +102,9 @@ export function Testimonials() {
   const side = testimonialsData.filter((t) => !t.featured);
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 lg:py-36">
+    <section id="testimonials" className="py-16 sm:py-20 lg:py-24 border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-8 sm:mb-10">
           <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight mb-4">
             What Our Members Say
           </h2>

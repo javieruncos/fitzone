@@ -42,11 +42,11 @@ export function Programs() {
   };
 
   return (
-    <section id="programs" className="py-16 sm:py-24 lg:py-28 bg-black">
+    <section id="programs" className="py-16 sm:py-20 lg:py-24 bg-gym-dark border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         
         {/* Header */}
-        <div className="mb-10 sm:mb-14 text-left">
+        <div className="mb-8 sm:mb-10 text-left">
           <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight leading-[0.95] mb-3">
             Train. Focus. Achieve.
           </h2>
