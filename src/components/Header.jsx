@@ -4,6 +4,14 @@ import { navLinks } from '../data/gymData';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const handleEscape = useCallback((e) => {
     if (e.key === 'Escape') setIsOpen(false);
@@ -17,28 +25,30 @@ export function Header() {
   }, [isOpen, handleEscape]);
 
   return (
-    <header className="sticky top-0 z-50 w-full h-20 bg-black border-b border-neutral-800/80 px-6 sm:px-10 lg:px-16 flex items-center justify-between box-border">
-      
-      {/* 1. LOGO */}
+    <header
+      className={`sticky top-0 z-50 w-full h-20 px-6 sm:px-10 lg:px-16 flex items-center justify-between box-border transition-all duration-300 ${
+        scrolled
+          ? 'bg-gym-dark/90 backdrop-blur-md border-b border-white/[0.06]'
+          : 'bg-transparent'
+      }`}
+    >
+      {/* Logo */}
       <a
         href="#home"
-        className="flex items-center gap-3 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 rounded-md"
+        className="flex items-center gap-3 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent rounded-md"
       >
         <Dumbbell
-          className="w-7 h-7 text-yellow-500 shrink-0"
+          className="w-7 h-7 text-gym-accent shrink-0"
           aria-hidden="true"
         />
         <div className="flex flex-col">
           <span className="font-black text-2xl tracking-wider text-white uppercase leading-none">
             FITZONE
           </span>
-          <span className="block text-[10px] font-bold tracking-[0.2em] text-zinc-400 uppercase mt-1">
-            STRONGER EVERYDAY
-          </span>
         </div>
       </a>
 
-      {/* 2. NAVEGACIÓN DESKTOP (Pantallas lg+) */}
+      {/* Desktop navigation */}
       <nav aria-label="Main navigation" className="hidden lg:flex items-center">
         <ul className="flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
@@ -46,10 +56,10 @@ export function Header() {
               <a
                 href={link.href}
                 aria-current={link.active ? 'page' : undefined}
-                className={`relative text-xs font-bold tracking-widest uppercase transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 rounded-md px-1 py-1 ${
+                className={`relative text-xs font-bold tracking-widest uppercase transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent rounded-md px-1 py-1 ${
                   link.active
-                    ? 'text-yellow-500 after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[2px] after:bg-yellow-500'
-                    : 'text-white hover:text-yellow-500'
+                    ? 'text-gym-accent after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[2px] after:bg-gym-accent'
+                    : 'text-white hover:text-gym-accent'
                 }`}
               >
                 {link.name}
@@ -59,21 +69,21 @@ export function Header() {
         </ul>
       </nav>
 
-      {/* 3. BOTÓN CTA DESKTOP (Pantallas lg+) */}
+      {/* Desktop CTA */}
       <a
         href="#membership"
-        className="hidden lg:inline-flex items-center justify-center bg-yellow-500 text-black font-black text-xs tracking-wider uppercase px-6 py-2.5 rounded-md hover:bg-yellow-400 active:scale-[0.98] transition-[color,transform] duration-200 ease-out shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
+        className="hidden lg:inline-flex items-center justify-center bg-gym-accent text-black font-bold text-xs tracking-wider uppercase px-6 py-2.5 rounded-full hover:bg-gym-accent-hover active:scale-[0.98] transition-[color,transform] duration-200 ease-out shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent"
       >
         JOIN NOW
       </a>
 
-      {/* 4. BOTÓN MENÚ MÓVIL (Pantallas < lg) */}
+      {/* Mobile menu button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        className="lg:hidden text-white min-h-[44px] min-w-[44px] inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 rounded-md hover:text-yellow-500 transition-colors"
+        className="lg:hidden text-white min-h-[44px] min-w-[44px] inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent rounded-md hover:text-gym-accent transition-colors"
       >
         {isOpen ? (
           <X className="w-6 h-6" aria-hidden="true" />
@@ -82,12 +92,12 @@ export function Header() {
         )}
       </button>
 
-      {/* MENÚ MÓVIL DESPLEGABLE */}
+      {/* Mobile menu dropdown */}
       <div
         id="mobile-menu"
         role="region"
         aria-label="Mobile navigation"
-        className={`lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-neutral-800 overflow-hidden transition-all duration-300 ease-out motion-reduce:transition-none shadow-2xl ${
+        className={`lg:hidden absolute top-full left-0 w-full bg-gym-dark/95 backdrop-blur-md border-b border-white/[0.06] overflow-hidden transition-all duration-300 ease-out motion-reduce:transition-none shadow-2xl ${
           isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}
       >
@@ -99,10 +109,10 @@ export function Header() {
                   href={link.href}
                   aria-current={link.active ? 'page' : undefined}
                   onClick={() => setIsOpen(false)}
-                  className={`block text-sm font-bold tracking-widest uppercase py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500 rounded-md px-3 ${
+                  className={`block text-sm font-bold tracking-widest uppercase py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent rounded-md px-3 ${
                     link.active
-                      ? 'text-yellow-500 bg-neutral-900/60'
-                      : 'text-zinc-300 hover:text-white hover:bg-neutral-900/30 transition-colors duration-200'
+                      ? 'text-gym-accent bg-white/5'
+                      : 'text-zinc-300 hover:text-white hover:bg-white/5 transition-colors duration-200'
                   }`}
                 >
                   {link.name}
@@ -113,7 +123,7 @@ export function Header() {
           <a
             href="#membership"
             onClick={() => setIsOpen(false)}
-            className="mt-2 inline-flex items-center justify-center bg-yellow-500 text-black font-black text-xs tracking-wider uppercase px-6 py-3 rounded-md hover:bg-yellow-400 active:scale-[0.97] transition-all duration-200 w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-500"
+            className="mt-2 inline-flex items-center justify-center bg-gym-accent text-black font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-full hover:bg-gym-accent-hover active:scale-[0.97] transition-all duration-200 w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent"
           >
             JOIN NOW
           </a>

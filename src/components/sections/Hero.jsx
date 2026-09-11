@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { Play, Dumbbell, UserCheck, ClipboardList, Users } from 'lucide-react';
+import { Dumbbell, UserCheck, ClipboardList, Users } from 'lucide-react';
 import { featuresData } from '../../data/gymData';
 import heroImage from '../../assets/hero.jpg';
 
@@ -15,14 +15,12 @@ const EASE = [0.16, 1, 0.3, 1];
 export function Hero() {
   const reduceMotion = useReducedMotion();
 
-  const y = reduceMotion ? 0 : 16;
-
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen bg-gym-dark text-white flex flex-col justify-between overflow-hidden pt-20"
+      className="relative w-full min-h-[100dvh] bg-gym-dark text-white flex flex-col justify-between overflow-hidden pt-20"
     >
-      {/* 1. IMAGEN DE FONDO — Full Size */}
+      {/* Background image */}
       <img
         src={heroImage}
         alt="Athlete training in a modern gym"
@@ -33,84 +31,70 @@ export function Hero() {
         className="absolute inset-0 w-full h-full object-cover object-[70%_center] z-0 opacity-90"
       />
 
-      {/* 2. GRADIENTE LEFT→RIGHT — Legibilidad del contenido */}
+      {/* Gradient overlay — left to right */}
       <div
         className="absolute inset-0 bg-gradient-to-r from-gym-dark via-gym-dark/70 to-transparent z-10"
         aria-hidden="true"
       />
 
-      {/* 3. GRADIENTE BOTTOM→TOP — Fusión con features card */}
+      {/* Gradient overlay — bottom to top */}
       <div
         className="absolute inset-0 bg-gradient-to-t from-gym-dark via-transparent to-transparent z-10"
         aria-hidden="true"
       />
 
-      {/* 4. BLOQUE DE CONTENIDO PRINCIPAL */}
+      {/* Main content block */}
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 w-full pt-12 pb-8 z-20 flex-1 flex flex-col justify-center">
         <motion.p
-          initial={{ opacity: 0, transform: `translateY(${y}px)` }}
-          animate={{ opacity: 1, transform: 'translateY(0px)' }}
-          transition={{ duration: 0.5, ease: EASE }}
-          className="text-white font-bold text-sm sm:text-base uppercase tracking-wide sm:tracking-widest mb-3"
+          initial={reduceMotion ? false : { opacity: 0, y: 16, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.6, ease: EASE }}
+          className="text-white/80 font-bold text-sm uppercase tracking-widest mb-3"
         >
-          BUILD STRENGTH.<br />
-          BUILD CONFIDENCE.
+          BUILD STRENGTH.
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, transform: `translateY(${y}px)` }}
-          animate={{ opacity: 1, transform: 'translateY(0px)' }}
-          transition={{ duration: 0.5, delay: 0.1, ease: EASE }}
-          className="font-black text-5xl sm:text-6xl lg:text-8xl uppercase tracking-tighter leading-[0.9] mb-4"
+          initial={reduceMotion ? false : { opacity: 0, y: 16, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
+          className="font-black text-4xl sm:text-5xl lg:text-[5.5rem] uppercase tracking-tighter leading-[0.9] mb-4"
         >
           BECOME <span className="text-gym-accent">YOUR BEST</span>
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, transform: `translateY(${y}px)` }}
-          animate={{ opacity: 1, transform: 'translateY(0px)' }}
-          transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
+          initial={reduceMotion ? false : { opacity: 0, y: 16, filter: 'blur(8px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
           className="text-zinc-300 text-sm sm:text-base max-w-md mb-8 leading-relaxed"
         >
-          Join a community that pushes you, supports you and helps you
-          become the strongest version of yourself.
+          Join the strongest community in the city. We push you, support you, and help you become who you're meant to be.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, transform: `translateY(${y}px)` }}
-          animate={{ opacity: 1, transform: 'translateY(0px)' }}
-          transition={{ duration: 0.5, delay: 0.3, ease: EASE }}
-          className="flex flex-wrap items-center gap-3 sm:gap-5"
+          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: EASE }}
         >
           <a
             href="#membership"
-            className="bg-gym-accent text-black font-black text-xs tracking-wider uppercase px-7 py-3.5 rounded-md hover:bg-gym-accent-hover active:scale-[0.98] transition-[color,transform] duration-200 ease-out flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark"
+            className="inline-flex items-center justify-center gap-2 bg-gym-accent text-black font-bold text-xs tracking-wider uppercase px-8 py-4 rounded-full hover:bg-gym-accent-hover active:scale-[0.98] transition-[color,transform] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark"
           >
             JOIN NOW
             <span aria-hidden="true">&rarr;</span>
           </a>
-
-          <button
-            type="button"
-            aria-label="Watch promotional video"
-            className="flex items-center gap-3 text-white font-bold text-xs tracking-widest uppercase hover:text-gym-accent transition-colors duration-200 ease-out group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark rounded-md"
-          >
-            <span className="w-11 h-11 rounded-full border border-white/40 flex items-center justify-center group-hover:border-gym-accent transition-colors duration-200 ease-out">
-              <Play className="w-4 h-4 fill-current" />
-            </span>
-            WATCH VIDEO
-          </button>
         </motion.div>
       </div>
 
-      {/* 5. TARJETA FLotante DE FEATURES */}
+      {/* Features card — floating at bottom */}
       <motion.div
-        initial={{ opacity: 0, transform: `translateY(${y}px)` }}
-        animate={{ opacity: 1, transform: 'translateY(0px)' }}
-        transition={{ duration: 0.5, delay: 0.4, ease: EASE }}
+        initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4, ease: EASE }}
         className="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-8 lg:pb-12 z-20"
       >
-        <div className="bg-gym-surface/90 backdrop-blur-md border border-gym-border rounded-2xl p-4 sm:p-6 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-gym-border">
+        <div className="bg-gym-surface/90 backdrop-blur-md border border-white/[0.06] rounded-xl p-4 sm:p-6 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-white/[0.06]">
           {featuresData.map((feature) => {
             const Icon = iconMap[feature.icon];
             return (
@@ -118,7 +102,7 @@ export function Hero() {
                 key={feature.title}
                 className="flex items-start gap-3 sm:justify-center lg:justify-start lg:px-6 first:lg:pl-0 last:lg:pr-0"
               >
-                <Icon className="w-5 h-5 text-gym-accent mt-0.5 shrink-0" />
+                <Icon className="w-5 h-5 text-white/50 mt-0.5 shrink-0" />
                 <div>
                   <p className="text-white text-sm font-bold tracking-wider uppercase">
                     {feature.title}

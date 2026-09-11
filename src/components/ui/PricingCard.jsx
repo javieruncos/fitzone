@@ -3,18 +3,18 @@ export function PricingCard({ tag, name, price, period, features, featured, badg
     <div
       className={`bg-gym-surface rounded-xl p-6 sm:p-8 flex flex-col justify-between h-full relative ${
         featured
-          ? 'border-2 border-gym-accent shadow-[0_0_30px_rgba(234,179,8,0.15)] scale-[1.02] lg:-translate-y-2 z-10'
-          : 'border border-gym-border'
+          ? 'border-2 border-gym-accent shadow-xl shadow-black/20 z-10'
+          : 'border border-white/[0.06]'
       }`}
     >
       {badge && (
-        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gym-accent text-black font-black text-xs px-3 py-1 uppercase tracking-wider">
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gym-accent text-black font-black text-xs px-4 py-1 rounded-full uppercase tracking-wider">
           {badge}
         </span>
       )}
 
       <div>
-        <span className="font-mono text-xs text-gym-accent tracking-widest uppercase">
+        <span className="font-mono text-xs text-white/50 tracking-widest uppercase">
           {tag}
         </span>
         <h3 className="text-white font-black text-xl sm:text-2xl uppercase tracking-tight mt-2">
@@ -30,7 +30,7 @@ export function PricingCard({ tag, name, price, period, features, featured, badg
           </span>
         </div>
 
-        <hr className="border-white/10 my-6" />
+        <hr className="border-white/[0.06] my-6" />
 
         <ul className="space-y-3">
           {features.map((feature) => (
@@ -46,13 +46,13 @@ export function PricingCard({ tag, name, price, period, features, featured, badg
 
       <a
         href="#membership"
-        className={`mt-8 min-h-[48px] flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-200 ease-out active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark ${
+        className={`mt-auto min-h-[48px] flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-200 ease-out active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark ${
           featured
-            ? 'bg-gym-accent text-black font-black hover:bg-yellow-400'
-            : 'bg-white/5 border border-gym-border text-white hover:border-gym-accent hover:text-gym-accent'
+            ? 'bg-gym-accent text-black hover:bg-gym-accent-hover rounded-full'
+            : 'bg-white/5 border border-white/[0.06] text-white hover:border-white/[0.12] rounded-full'
         }`}
       >
-        Get Started
+        JOIN NOW
       </a>
     </div>
   );

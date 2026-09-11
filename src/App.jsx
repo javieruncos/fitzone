@@ -12,16 +12,22 @@ import { Footer } from './components/sections/Footer';
 function App() {
   return (
     <div className="min-h-screen bg-gym-dark text-gym-text">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-gym-accent focus:text-black focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold focus:text-sm"
+      >
+        Skip to content
+      </a>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Programs />
+        <Facilities />
         <Trainers />
         <Memberships />
-        <Facilities />
         <Testimonials />
-        <FAQ />
         <About />
+        <FAQ />
       </main>
       <Footer />
     </div>

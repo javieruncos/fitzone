@@ -1,11 +1,20 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import { facilitiesData } from '../../data/gymData';
 
 const EASE = [0.16, 1, 0.3, 1];
 
-function FacilityCard({ facility, featured = false, index = 0, reduceMotion }) {
-  const delay = reduceMotion ? 0 : featured ? 0.2 : 0.15 + index * 0.1;
+// Mapeo seguro de Tailwind para evitar que el compilador JIT ignore las clases dinámicas
+const ASPECT_CLASSES = {
+  '16/9': 'aspect-[16/9]',
+  '16/10': 'aspect-[16/10]',
+  '3/2': 'aspect-[3/2]',
+  '4/3': 'aspect-[4/3]',
+  full: 'h-full min-h-[320px]',
+};
+
+function FacilityCard({ facility, aspect = '4/3', index = 0, reduceMotion }) {
+  const delay = reduceMotion ? 0 : 0.1 + index * 0.08;
+  const aspectClass = ASPECT_CLASSES[aspect] || 'aspect-[4/3]';
 
   return (
     <motion.div
@@ -13,35 +22,34 @@ function FacilityCard({ facility, featured = false, index = 0, reduceMotion }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={reduceMotion ? { duration: 0 } : { duration: 0.5, delay, ease: EASE }}
-      className={`group relative overflow-hidden rounded-xl ${
-        featured ? 'aspect-[16/7]' : 'aspect-[4/3]'
-      }`}
+      className={`group relative overflow-hidden rounded-xl bg-gym-surface border border-white/[0.06] w-full ${aspectClass}`}
     >
       <img
         src={facility.image}
         alt={`${facility.name} at FitZone gym`}
-        width={featured ? 1280 : 640}
-        height={featured ? 560 : 480}
-        loading={featured ? 'eager' : 'lazy'}
+        width="640"
+        height="480"
+        loading="lazy"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+        className="absolute inset-0 w-full h-full object-cover opacity-60 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+      {/* Gradient Overlay con mejor contraste UX */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
 
-      <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
-        <span className="text-gym-accent font-mono text-xs tracking-widest uppercase mb-2">
-          {facility.zone}
-        </span>
-        <h3 className="text-white font-bold text-xl sm:text-2xl uppercase tracking-wide mb-2">
+      {/* Content Container */}
+      <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6 lg:p-8">
+        {facility.zone && (
+          <span className="text-gym-accent font-mono text-[10px] sm:text-xs tracking-widest uppercase mb-1 sm:mb-2">
+            {facility.zone}
+          </span>
+        )}
+        <h3 className="text-white font-bold text-lg sm:text-xl lg:text-2xl uppercase tracking-wide mb-1 sm:mb-2">
           {facility.name}
         </h3>
-        <p className="text-zinc-400 text-sm leading-relaxed max-w-sm mb-3">
+        <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-sm line-clamp-3">
           {facility.description}
         </p>
-        <span className="inline-flex items-center gap-2 text-white/0 group-hover:text-white/80 transition-colors duration-300 text-sm font-medium">
-          Explore <ArrowRight size={14} />
-        </span>
       </div>
     </motion.div>
   );
@@ -49,60 +57,75 @@ function FacilityCard({ facility, featured = false, index = 0, reduceMotion }) {
 
 export function Facilities() {
   const reduceMotion = useReducedMotion();
-
-  const featured = facilitiesData.find((f) => f.featured);
-  const secondary = facilitiesData.filter((f) => !f.featured);
+  const [hero, left, ...rightCards] = facilitiesData;
 
   return (
-    <section id="facilities" className="py-16 sm:py-20 lg:py-24">
+    <section id="facilities" className="py-20 sm:py-28 lg:py-36 bg-black">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
 
         {/* ── HEADER ────────────────────────────────────────── */}
-        <motion.p
-          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={reduceMotion ? { duration: 0 } : { duration: 0.5, ease: EASE }}
-          className="text-gym-accent font-bold text-xs sm:text-sm tracking-widest uppercase mb-4"
-        >
-          Facilities
-        </motion.p>
+        <div className="text-left mb-12 sm:mb-16">
+          <motion.h2
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 0.5, ease: EASE }}
+            className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight leading-none mb-3"
+          >
+            Explore Our Space
+          </motion.h2>
 
-        <motion.h2
-          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={reduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.1, ease: EASE }}
-          className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tighter leading-[0.9] mb-4"
-        >
-          Explore Our Space
-        </motion.h2>
+          <motion.p
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.1, ease: EASE }}
+            className="text-zinc-400 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed"
+          >
+            Discover the spaces designed for every kind of training.
+          </motion.p>
+        </div>
 
-        <motion.p
-          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={reduceMotion ? { duration: 0 } : { duration: 0.5, delay: 0.2, ease: EASE }}
-          className="text-zinc-400 text-sm sm:text-base lg:text-lg max-w-xl leading-relaxed mb-12 sm:mb-16"
-        >
-          Discover the spaces designed for every kind of training.
-        </motion.p>
+        {/* ── BENTO GRID STRUCTURAL FIX ─────────────────────── */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        {/* ── FEATURED CARD ──────────────────────────────────── */}
-        {featured && (
-          <FacilityCard facility={featured} featured reduceMotion={reduceMotion} />
-        )}
+          {/* HERO CARD — Full Row */}
+          {hero && (
+            <div className="lg:col-span-3">
+              <FacilityCard
+                facility={hero}
+                aspect="16/9"
+                index={0}
+                reduceMotion={reduceMotion}
+              />
+            </div>
+          )}
 
-        {/* ── SECONDARY CARDS — 2×2 GRID ────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-          {secondary.map((facility, index) => (
-            <FacilityCard
-              key={facility.id}
-              facility={facility}
-              index={index}
-              reduceMotion={reduceMotion}
-            />
-          ))}
+          {/* LEFT COLUMN — Main Feature */}
+          {left && (
+            <div className="lg:col-span-2 flex">
+              <FacilityCard
+                facility={left}
+                aspect="full"
+                index={1}
+                reduceMotion={reduceMotion}
+              />
+            </div>
+          )}
+
+          {/* RIGHT COLUMN — Stacked Cards */}
+          <div className="lg:col-span-1 flex flex-col gap-6">
+            {rightCards.map((facility, index) => (
+              <FacilityCard
+                key={facility.id || index}
+                facility={facility}
+                aspect="16/10"
+                index={index + 2}
+                reduceMotion={reduceMotion}
+              />
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

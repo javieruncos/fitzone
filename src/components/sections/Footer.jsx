@@ -10,14 +10,14 @@ const iconMap = {
 
 export function Footer() {
   return (
-    <footer className="bg-gym-surface border-t border-gym-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-gym-surface border-t border-white/[0.06]">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {contactInfo.map((info) => {
             const Icon = iconMap[info.icon];
             return (
               <div key={info.title} className="space-y-3">
-                <Icon className="w-6 h-6 text-gym-accent" />
+                <Icon className="w-6 h-6 text-white/50" />
                 <h3 className="font-bold text-sm uppercase tracking-wider">
                   {info.title}
                 </h3>
@@ -31,9 +31,9 @@ export function Footer() {
           })}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gym-border text-center">
+        <div className="mt-12 pt-8 border-t border-white/[0.06] text-center">
           <p className="text-zinc-400 text-sm">
-            © 2026 FitZone. All rights reserved.
+            &copy; 2026 FITZONE. All rights reserved.
           </p>
         </div>
       </div>

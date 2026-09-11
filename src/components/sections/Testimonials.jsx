@@ -1,53 +1,26 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { testimonialsData } from '../../data/gymData';
-import { Star } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.06,
+      staggerChildren: 0.08,
       delayChildren: 0.05,
     },
   },
 };
 
-function StarRating({ count = 5 }) {
+function TestimonialCard({ name, role, text }) {
   return (
-    <div className="flex gap-1">
-      {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="w-4 h-4 fill-gym-accent text-gym-accent" />
-      ))}
-    </div>
-  );
-}
-
-function TestimonialCard({ name, role, company, text, rating, avatar, variant = 'dark' }) {
-  const bg = variant === 'dark' ? 'bg-gym-surface' : 'bg-neutral-800';
-
-  return (
-    <div className={`${bg} border border-gym-border rounded-xl p-6 flex flex-col justify-between h-full`}>
-      <div>
-        <StarRating count={rating} />
-        <p className="text-zinc-300 text-sm leading-relaxed mt-4">
-          &ldquo;{text}&rdquo;
-        </p>
-      </div>
-      <div className="flex items-center gap-3 mt-6 pt-4 border-t border-gym-border">
-        <img
-          src={avatar}
-          alt={name}
-          width="40"
-          height="40"
-          loading="lazy"
-          decoding="async"
-          className="w-10 h-10 rounded-full object-cover shrink-0"
-        />
-        <div>
-          <p className="text-white text-sm font-bold">{name}</p>
-          <p className="text-zinc-400 text-xs">{role} of {company}</p>
-        </div>
+    <div className="bg-gym-surface border border-white/[0.06] rounded-xl p-6 flex flex-col justify-between h-full">
+      <p className="text-zinc-300 text-sm leading-relaxed">
+        &ldquo;{text}&rdquo;
+      </p>
+      <div className="mt-6 pt-4 border-t border-white/[0.06]">
+        <p className="text-white text-sm font-bold">{name}</p>
+        <p className="text-zinc-500 text-xs mt-1">{role}</p>
       </div>
     </div>
   );
@@ -55,8 +28,8 @@ function TestimonialCard({ name, role, company, text, rating, avatar, variant = 
 
 function FeaturedCard({ testimonial }) {
   return (
-    <div className="bg-gym-surface border border-gym-border rounded-xl overflow-hidden flex flex-col h-full relative">
-      <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
+    <div className="bg-gym-surface border border-white/[0.06] rounded-xl overflow-hidden flex flex-col h-full relative">
+      <div className="relative h-56 sm:h-64 lg:h-80 overflow-hidden">
         <img
           src={testimonial.avatar}
           alt={testimonial.name}
@@ -69,7 +42,7 @@ function FeaturedCard({ testimonial }) {
         <div className="absolute inset-0 bg-gradient-to-t from-gym-surface via-gym-surface/60 to-transparent" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <p className="text-gym-accent font-bold text-xs tracking-widest uppercase mb-2">
-            A Partner Who Accelerates Growth
+            Trusted by our members
           </p>
           <h3 className="text-white font-black text-3xl sm:text-4xl uppercase tracking-tight">
             FITZONE
@@ -78,23 +51,18 @@ function FeaturedCard({ testimonial }) {
       </div>
 
       <div className="p-6 flex flex-col flex-1">
-        <StarRating count={testimonial.rating} />
-        <p className="text-zinc-300 text-sm leading-relaxed mt-4">
+        <div className="flex gap-1 mb-4">
+          {Array.from({ length: testimonial.rating }).map((_, i) => (
+            <svg key={i} className="w-4 h-4 fill-gym-accent text-gym-accent" viewBox="0 0 24 24">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          ))}
+        </div>
+        <p className="text-zinc-300 text-sm leading-relaxed">
           &ldquo;{testimonial.text}&rdquo;
         </p>
 
-        <div className="grid grid-cols-2 gap-4 mt-6 pt-4 border-t border-gym-border">
-          <div>
-            <p className="text-white font-black text-3xl tracking-tight">32%</p>
-            <p className="text-zinc-400 text-xs uppercase tracking-wider mt-1">Lead Generation</p>
-          </div>
-          <div>
-            <p className="text-white font-black text-3xl tracking-tight">4.9</p>
-            <p className="text-zinc-400 text-xs uppercase tracking-wider mt-1">Client Rating</p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-3 mt-6 pt-4 border-t border-gym-border">
+        <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center gap-3">
           <img
             src={testimonial.avatar}
             alt={testimonial.name}
@@ -106,9 +74,8 @@ function FeaturedCard({ testimonial }) {
           />
           <div className="flex-1 min-w-0">
             <p className="text-white text-sm font-bold">{testimonial.name}</p>
-            <p className="text-zinc-400 text-xs">{testimonial.role} of {testimonial.company}</p>
+            <p className="text-zinc-500 text-xs">{testimonial.role}</p>
           </div>
-          <span className="text-zinc-500 text-xs font-mono">1 / 4</span>
         </div>
       </div>
     </div>
@@ -133,18 +100,13 @@ export function Testimonials() {
 
   const featured = testimonialsData.find((t) => t.featured);
   const side = testimonialsData.filter((t) => !t.featured);
-  const left = side.slice(0, 2);
-  const right = side.slice(2, 4);
 
   return (
-    <section id="testimonials" className="py-12 sm:py-16 lg:py-20">
+    <section id="testimonials" className="py-20 sm:py-28 lg:py-36">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="text-center mb-8 sm:mb-10">
-          <p className="text-gym-accent font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">
-            Testimonials
-          </p>
+        <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight mb-4">
-            What Our Members Say.
+            What Our Members Say
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
             Real stories from real people who transformed their lives with FitZone.
@@ -152,48 +114,27 @@ export function Testimonials() {
         </div>
 
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.05, margin: '0px 0px -50px 0px' }}
         >
-          {/* Left Column */}
-          <div className="flex flex-col gap-6">
-            {left.map((t) => (
-              <motion.div key={t.id} variants={cardVariants} className="flex-1">
-                <TestimonialCard
-                  name={t.name}
-                  role={t.role}
-                  company={t.company}
-                  text={t.text}
-                  rating={t.rating}
-                  avatar={t.avatar}
-                  variant="dark"
-                />
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Center Column — Featured */}
+          {/* Featured — Left Column */}
           {featured && (
             <motion.div variants={cardVariants}>
               <FeaturedCard testimonial={featured} />
             </motion.div>
           )}
 
-          {/* Right Column */}
+          {/* Side Cards — Right Column (stacked) */}
           <div className="flex flex-col gap-6">
-            {right.map((t) => (
+            {side.slice(0, 2).map((t) => (
               <motion.div key={t.id} variants={cardVariants} className="flex-1">
                 <TestimonialCard
                   name={t.name}
                   role={t.role}
-                  company={t.company}
                   text={t.text}
-                  rating={t.rating}
-                  avatar={t.avatar}
-                  variant="light"
                 />
               </motion.div>
             ))}

@@ -35,7 +35,7 @@ function FAQItem({ item, isOpen, onToggle, reduceMotion }) {
     <motion.div
       variants={itemVariants}
       custom={reduceMotion}
-      className="border-t border-gym-border"
+      className="border-t border-white/[0.06]"
     >
       <button
         id={buttonId}
@@ -92,7 +92,7 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-12 sm:py-16 lg:py-20">
+    <section id="faq" className="py-20 sm:py-28 lg:py-36">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start"
@@ -131,7 +131,7 @@ export function FAQ() {
                 reduceMotion={reduceMotion}
               />
             ))}
-            <div className="border-t border-gym-border" />
+            <div className="border-t border-white/[0.06]" />
           </div>
         </motion.div>
       </div>

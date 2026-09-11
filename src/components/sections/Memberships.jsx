@@ -30,14 +30,11 @@ export function Memberships() {
   };
 
   return (
-    <section id="membership" className="py-12 sm:py-16 lg:py-20">
+    <section id="membership" className="py-20 sm:py-28 lg:py-36">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="text-center mb-8 sm:mb-10">
-          <p className="text-gym-accent font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">
-            Pricing Plans
-          </p>
+        <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight mb-4">
-            Join The Club.
+            Join The Club
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
             Choose the membership that matches your goals. Every plan includes full access to our state-of-the-art facility and expert support.
