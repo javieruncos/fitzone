@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full min-h-[100dvh] bg-gym-dark text-white flex flex-col justify-between overflow-hidden pt-20"
+      className="relative w-full min-h-[100dvh] [@media(min-width:640px)_and_(max-width:1023.98px)]:min-h-0 bg-gym-dark text-white flex flex-col justify-between overflow-hidden pt-20"
     >
       {/* Background image */}
       <img
