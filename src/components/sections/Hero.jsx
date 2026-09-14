@@ -26,7 +26,7 @@ export function Hero() {
         alt="Atleta entrenando en un gimnasio moderno"
         width="1920"
         height="1080"
-        fetchpriority="high"
+        fetchPriority="high"
         decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-[70%_center] z-0 opacity-90"
       />
@@ -94,7 +94,7 @@ export function Hero() {
         transition={{ duration: 0.6, delay: 0.4, ease: EASE }}
         className="relative w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-8 lg:pb-12 z-20"
       >
-        <div className="bg-gym-surface/90 backdrop-blur-md border border-white/[0.06] rounded-xl p-4 sm:p-6 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-sm:gap-4 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-white/[0.06]">
+        <div className="bg-gym-surface border border-white/[0.06] rounded-xl p-4 sm:p-6 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-sm:gap-4 lg:gap-0 divide-y sm:divide-y-0 lg:divide-x divide-white/[0.06]">
           {featuresData.map((feature) => {
             const Icon = iconMap[feature.icon];
             return (

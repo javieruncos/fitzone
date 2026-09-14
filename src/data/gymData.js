@@ -44,37 +44,6 @@ export const featuresData = [
   }
 ];
 
-export const programsData = [
-  {
-    id: 1,
-    zone: '01',
-    title: 'ENTRENAMIENTO DE FUERZA',
-    description: 'Sobrecarga progresiva y movimientos compuestos para fuerza real.',
-    image: strengthFloor,
-  },
-  {
-    id: 2,
-    zone: '02',
-    title: 'PÉRDIDA DE PESO',
-    description: 'Programas efectivos para bajar de peso y ganar salud.',
-    image: cardioZone,
-  },
-  {
-    id: 3,
-    zone: '03',
-    title: 'ENTRENAMIENTO FUNCIONAL',
-    description: 'Mejora tu movilidad, resistencia y rendimiento diario.',
-    image: functionalZone,
-  },
-  {
-    id: 4,
-    zone: '04',
-    title: 'YOGA Y BIENESTAR',
-    description: 'Equilibra cuerpo y mente con yoga y elongación.',
-    image: lockersZone,
-  },
-];
-
 export const contactInfo = [
   {
     icon: 'MapPin',

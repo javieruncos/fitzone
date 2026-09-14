@@ -35,7 +35,7 @@ export function PricingCard({ tag, name, price, period, features, featured, badg
         <ul className="space-y-3">
           {features.map((feature) => (
             <li key={feature} className="text-zinc-300 text-sm flex items-center gap-3">
-              <svg className="w-4 h-4 text-gym-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <svg aria-hidden="true" className="w-4 h-4 text-gym-accent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
               {feature}
