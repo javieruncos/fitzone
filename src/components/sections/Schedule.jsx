@@ -36,7 +36,7 @@ function ClassRow({ cls, reduceMotion }) {
         <span className="font-mono text-xs text-zinc-500 tracking-wide">
           {cls.duration}
         </span>
-        <span className="font-mono text-xs text-zinc-600 tracking-wide hidden sm:inline">
+        <span className="font-mono text-xs text-zinc-600 tracking-wide sm:inline">
           {cls.level}
         </span>
       </div>
@@ -58,17 +58,17 @@ export function Schedule() {
         {/* Header */}
         <div className="mb-8 sm:mb-10 text-left">
           <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight leading-[0.95] mb-3">
-            Class Schedule
+            Horarios de clases
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed">
-            Your weekly training lineup. Find the perfect session for your goals.
+            Tu semana de entrenamiento. Encuentra la sesión ideal para tu objetivo.
           </p>
         </div>
 
         {/* Day Tabs */}
         <div
           role="tablist"
-          aria-label="Select a day"
+          aria-label="Elige un día"
           className="flex overflow-x-auto scrollbar-hide gap-0 border-b border-white/[0.06] mb-6 sm:mb-8 -mx-6 px-6 sm:mx-0 sm:px-0"
         >
           {DAYS.map((day) => {
@@ -108,7 +108,7 @@ export function Schedule() {
         <div
           id="schedule-panel"
           role="tabpanel"
-          aria-label={`Schedule for ${activeDay}`}
+          aria-label={`Horario — ${activeDay}`}
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -124,7 +124,7 @@ export function Schedule() {
                 ))
               ) : (
                 <p className="text-zinc-500 text-sm py-8 text-center">
-                  No classes scheduled for this day.
+                  No hay clases programadas para este día.
                 </p>
               )}
             </motion.div>
@@ -137,7 +137,7 @@ export function Schedule() {
             href="#membership"
             className="inline-flex items-center gap-2 border border-white/20 text-white hover:border-white/40 px-6 py-3 min-h-[48px] font-bold uppercase tracking-wider text-sm transition-all duration-200 ease-out rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark active:scale-[0.98]"
           >
-            View Memberships
+            Ver membresías
             <ArrowRight size={16} />
           </a>
         </div>

@@ -38,10 +38,10 @@ export function Trainers() {
         {/* Header estandarizado */}
         <div className="mb-8 sm:mb-10 text-left">
           <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight leading-[0.95] mb-3">
-            World-Class Coaches
+            Entrenadores de primer nivel
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed">
-            Certified professionals with decades of combined experience. Each coach specializes in a distinct discipline.
+            Profesionales certificados con años de experiencia combinada. Cada uno se especializa en una disciplina.
           </p>
         </div>
 

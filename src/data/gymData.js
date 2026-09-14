@@ -1,33 +1,46 @@
+import strengthFloor from '../assets/images/strength-floor.jpg';
+import functionalZone from '../assets/images/functional.jpg';
+import freeWeightsZone from '../assets/images/free-weights.jpg';
+import cardioZone from '../assets/images/cardio.jpg';
+import lockersZone from '../assets/images/lockers.jpg';
+import aboutPhoto from '../assets/images/about.jpg';
+import trainersStrength from '../assets/images/trainers-strength.jpg';
+import trainersFunctional from '../assets/images/trainers-functional.jpg';
+import trainerMarcus from '../assets/images/trainer-marcus.jpg';
+import trainerElena from '../assets/images/trainer-elena.jpg';
+import trainerJaxson from '../assets/images/trainer-jaxson.jpg';
+import trainerSarah from '../assets/images/trainer-sarah.jpg';
+
 export const navLinks = [
-  { name: 'HOME', href: '#home', active: true },
-  { name: 'ABOUT', href: '#about' },
-  { name: 'PROGRAMS', href: '#programs' },
-  { name: 'TRAINERS', href: '#trainers' },
-  { name: 'MEMBERSHIP', href: '#membership' },
-  { name: 'FACILITIES', href: '#facilities' },
+  { name: 'INICIO', href: '#home', active: true },
+  { name: 'NOSOTROS', href: '#about' },
+  { name: 'PROGRAMAS', href: '#programs' },
+  { name: 'ENTRENADORES', href: '#trainers' },
+  { name: 'MEMBRESÍAS', href: '#membership' },
+  { name: 'ESPACIOS', href: '#facilities' },
   { name: 'FAQ', href: '#faq' },
 ];
 
 export const featuresData = [
   {
     icon: 'Dumbbell',
-    title: 'MODERN EQUIPMENT',
-    description: 'Top quality machines and equipments for effective workouts.'
+    title: 'EQUIPAMIENTO MODERNO',
+    description: 'Máquinas y equipos de primer nivel para entrenar en serio.'
   },
   {
     icon: 'UserCheck',
-    title: 'EXPERT TRAINERS',
-    description: 'Certified & experienced trainers to guide you every step.'
+    title: 'ENTRENADORES EXPERTOS',
+    description: 'Entrenadores certificados que te acompañan en cada paso.'
   },
   {
     icon: 'ClipboardList',
-    title: 'PERSONALIZED PLANS',
-    description: 'Workout and diet plans tailored to your goals and lifestyle.'
+    title: 'PLANES PERSONALIZADOS',
+    description: 'Rutinas y nutrición adaptadas a tus objetivos y tu estilo de vida.'
   },
   {
     icon: 'Users',
-    title: 'SUPPORTIVE COMMUNITY',
-    description: 'A positive environment that keeps you motivated and consistent.'
+    title: 'COMUNIDAD QUE ACOMPAÑA',
+    description: 'Un ambiente positivo que te mantiene motivado y constante.'
   }
 ];
 
@@ -35,42 +48,42 @@ export const programsData = [
   {
     id: 1,
     zone: '01',
-    title: 'STRENGTH TRAINING',
-    description: 'Progressive overload and compound movements for serious strength.',
-    image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg',
+    title: 'ENTRENAMIENTO DE FUERZA',
+    description: 'Sobrecarga progresiva y movimientos compuestos para fuerza real.',
+    image: strengthFloor,
   },
   {
     id: 2,
     zone: '02',
-    title: 'WEIGHT LOSS',
-    description: 'Effective fat loss programs for a healthier you.',
-    image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg',
+    title: 'PÉRDIDA DE PESO',
+    description: 'Programas efectivos para bajar de peso y ganar salud.',
+    image: cardioZone,
   },
   {
     id: 3,
     zone: '03',
-    title: 'FUNCTIONAL TRAINING',
-    description: 'Improve mobility, endurance and everyday performance.',
-    image: 'https://images.pexels.com/photos/2261477/pexels-photo-2261477.jpeg',
+    title: 'ENTRENAMIENTO FUNCIONAL',
+    description: 'Mejora tu movilidad, resistencia y rendimiento diario.',
+    image: functionalZone,
   },
   {
     id: 4,
     zone: '04',
-    title: 'YOGA & WELLNESS',
-    description: 'Balance your body and mind with yoga and stretching.',
-    image: 'https://images.pexels.com/photos/3822677/pexels-photo-3822677.jpeg',
+    title: 'YOGA Y BIENESTAR',
+    description: 'Equilibra cuerpo y mente con yoga y elongación.',
+    image: lockersZone,
   },
 ];
 
 export const contactInfo = [
   {
     icon: 'MapPin',
-    title: 'ADDRESS',
+    title: 'DIRECCIÓN',
     lines: ['123 Fitness Street,', 'Coimbatore, Tamil Nadu 641001']
   },
   {
     icon: 'Phone',
-    title: 'PHONE',
+    title: 'TELÉFONO',
     lines: ['+91 91596 81276']
   },
   {
@@ -80,8 +93,8 @@ export const contactInfo = [
   },
   {
     icon: 'Clock',
-    title: 'OPENING HOURS',
-    lines: ['Mon - Sat: 5:30 AM - 10:00 PM', 'Sunday: 6:00 AM - 1:00 PM']
+    title: 'HORARIOS',
+    lines: ['Lun - Sáb: 5:30 AM - 10:00 PM']
   }
 ];
 
@@ -89,33 +102,33 @@ export const trainersData = [
   {
     id: 1,
     name: 'Marcus Vance',
-    role: 'HEAD OF STRENGTH',
+    role: 'RESPONSABLE DE FUERZA',
     certifications: ['CSCS', 'USA-W'],
-    image: 'https://images.pexels.com/photos/1431283/pexels-photo-1431283.jpeg',
+    image: trainerMarcus,
     socials: { instagram: '#', tiktok: '#' },
   },
   {
     id: 2,
     name: 'Elena Rostova',
-    role: 'FUNCTIONAL & HYROX',
+    role: 'FUNCIONAL & HYROX',
     certifications: ['HYROX MASTER', 'CF-L2'],
-    image: 'https://images.pexels.com/photos/3820397/pexels-photo-3820397.jpeg',
+    image: trainerElena,
     socials: { instagram: '#', tiktok: '#' },
   },
   {
     id: 3,
     name: 'Jaxson Reed',
-    role: 'POWERLIFTING COACH',
+    role: 'ENTRENADOR DE POWERLIFTING',
     certifications: ['IPL PRO', 'NSCA-CPT'],
-    image: 'https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg',
+    image: trainerJaxson,
     socials: { instagram: '#', tiktok: '#' },
   },
   {
     id: 4,
     name: 'Sarah Chen',
-    role: 'RECOVERY & MOBILITY',
+    role: 'RECUPERACIÓN Y MOVILIDAD',
     certifications: ['EXOS', 'FMS'],
-    image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg',
+    image: trainerSarah,
     socials: { instagram: '#', tiktok: '#' },
   },
 ];
@@ -123,52 +136,52 @@ export const trainersData = [
 export const membershipsData = [
   {
     id: 1,
-    tag: 'SINGLE ACCESS',
-    name: 'DAY WARRIOR',
+    tag: 'ACCESO POR DÍA',
+    name: 'PASE DIARIO',
     price: '15',
-    period: '/DAY',
+    period: '/DÍA',
     featured: false,
     features: [
-      'Full gym floor access',
-      'Locker room & showers',
-      'Free WiFi',
-      'One-time entry',
+      'Acceso total a la sala',
+      'Vestuarios y duchas',
+      'WiFi liberado',
+      'Entrada por única vez',
     ],
   },
   {
     id: 2,
-    tag: 'MOST POPULAR',
-    name: 'PRO ATHLETE',
+    tag: 'MÁS POPULAR',
+    name: 'PRO ATLETA',
     price: '59',
-    period: '/MO',
-    badge: 'RECOMMENDED',
+    period: '/MES',
+    badge: 'RECOMENDADO',
     featured: true,
     features: [
-      'Unlimited 24/7 gym access',
-      'All group classes included',
-      'Sauna & steam room',
-      '1 free coach session / month',
-      'Nutrition app access',
-      'Guest passes (2 / month)',
-      'Protein bar discounts',
+      'Acceso ilimitado 24/7',
+      'Todas las clases grupales incluidas',
+      'Sauna y baño de vapor',
+      '1 sesión con entrenador / mes',
+      'Acceso a la app de nutrición',
+      'Pases de invitado (2 / mes)',
+      'Descuentos en la barra proteica',
     ],
   },
   {
     id: 3,
-    tag: 'FULL EXPERIENCE',
-    name: 'ELITE',
+    tag: 'EXPERIENCIA TOTAL',
+    name: 'ÉLITE',
     price: '99',
-    period: '/MO',
+    period: '/MES',
     featured: false,
     features: [
-      'Everything in Pro Athlete',
-      'Private recovery zone',
-      'Dedicated nutritionist',
-      'Monthly body composition scan',
-      'VIP locker with laundry',
-      'Guest passes (unlimited)',
-      'Priority class booking',
-      'Exclusive merchandise',
+      'Todo lo del Pro Atleta',
+      'Zona privada de recuperación',
+      'Nutricionista dedicado',
+      'Evaluación corporal mensual',
+      'Locker VIP con lavandería',
+      'Pases de invitado (ilimitados)',
+      'Reserva prioritaria de clases',
+      'Merchandising exclusivo',
     ],
   },
 ];
@@ -177,38 +190,38 @@ export const facilitiesData = [
   {
     id: 1,
     zone: '01',
-    name: 'STRENGTH FLOOR',
-    description: 'Competition-grade equipment built for serious training. From Olympic platforms to power racks engineered for progressive overload.',
-    image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg',
+    name: 'SALA DE FUERZA',
+    description: 'Equipamiento de nivel competición para entrenar en serio. Plataformas olímpicas y racks pensados para la sobrecarga progresiva.',
+    image: strengthFloor,
     featured: true,
   },
   {
     id: 2,
     zone: '02',
-    name: 'FUNCTIONAL TRAINING',
-    description: 'Turf track, rigs, and performance tools designed for athletic conditioning and hybrid training disciplines.',
-    image: 'https://images.pexels.com/photos/4164761/pexels-photo-4164761.jpeg',
+    name: 'ENTRENAMIENTO FUNCIONAL',
+    description: 'Pista de turf, racks y herramientas para el acondicionamiento atlético y el entrenamiento híbrido.',
+    image: functionalZone,
   },
   {
     id: 3,
     zone: '03',
-    name: 'CARDIO ZONE',
-    description: 'Dedicated cardio equipment for endurance training.',
-    image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg',
+    name: 'ZONA DE CARDIO',
+    description: 'Equipos de cardio dedicados para entrenar la resistencia.',
+    image: cardioZone,
   },
   {
     id: 4,
     zone: '04',
-    name: 'FREE WEIGHTS',
-    description: 'Dumbbells, barbells and dedicated free-weight space.',
-    image: 'https://images.pexels.com/photos/3820397/pexels-photo-3820397.jpeg',
+    name: 'PESOS LIBRES',
+    description: 'Mancuernas, barras y un espacio dedicado a los pesos libres.',
+    image: freeWeightsZone,
   },
   {
     id: 5,
     zone: '05',
-    name: 'LOCKER ROOMS',
-    description: 'Modern changing facilities designed for comfort.',
-    image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg',
+    name: 'VESTUARIOS',
+    description: 'Vestuarios modernos pensados para tu comodidad.',
+    image: lockersZone,
   },
 ];
 
@@ -216,159 +229,151 @@ export const testimonialsData = [
   {
     id: 1,
     name: 'Jenny Wilson',
-    role: 'Member since 2023',
-    text: 'I finally found a gym where I actually want to show up. The coaches push you without making it feel intimidating. Three months in and I\'m stronger than I\'ve ever been.',
+    role: 'Socio desde 2023',
+    text: 'Por fin encontré un gimnasio al que me dan ganas de venir. Los entrenadores te exigen sin intimidar.',
     rating: 5,
-    avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg',
+    avatar: aboutPhoto,
   },
   {
     id: 2,
     name: 'Leslie Alexander',
-    role: 'Member since 2024',
-    text: 'Started as a complete beginner. The personalized onboarding session made all the difference. I went from not knowing how to deadlift to hitting personal records every week.',
+    role: 'Socio desde 2024',
+    text: 'Empecé de cero. La primera evaluación marcó la diferencia: pasé de no saber hacer peso muerto a mejorar mis marcas cada semana.',
     rating: 5,
-    avatar: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg',
+    avatar: trainersFunctional,
   },
   {
     id: 3,
     name: 'Marcus Thompson',
-    role: 'Member since 2022',
-    text: 'The community here is unmatched. It\'s not just a gym, it\'s a place where people genuinely root for each other. That\'s what keeps me coming back five days a week.',
+    role: 'Socio desde 2022',
+    text: 'La comunidad acá es única. No es solo un gimnasio: es un lugar donde todos te alientan de verdad.',
     rating: 5,
-    avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
+    avatar: trainersStrength,
     featured: true,
   },
   {
     id: 4,
     name: 'Sarah Chen',
-    role: 'Member since 2023',
-    text: 'After hitting a plateau for two years, the coaches at FitZone designed a program that finally broke through it. The progress photos speak for themselves.',
+    role: 'Socio desde 2023',
+    text: 'Después de dos años estancada, los entrenadores de FitZone me armaron un programa que por fin rompió el techo.',
     rating: 5,
-    avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg',
+    avatar: trainersFunctional,
   },
   {
     id: 5,
     name: 'David Martinez',
-    role: 'Member since 2024',
-    text: 'The facility is world-class but what really sets FitZone apart is the energy. Every session feels like you\'re part of something bigger than just a workout.',
+    role: 'Socio desde 2024',
+    text: 'La instalación es de primer nivel, pero lo que distingue a FitZone es la energía.',
     rating: 5,
-    avatar: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg',
+    avatar: freeWeightsZone,
   },
 ];
 
 export const faqData = [
   {
     id: 1,
-    question: 'Do I need prior experience to start?',
-    answer: 'Not at all. Our programs are designed for every fitness level, from complete beginners to advanced athletes. Your first session includes a full assessment so we can tailor everything to where you are right now.',
+    question: '¿Necesito experiencia previa para empezar?',
+    answer: 'Para nada. Nuestros programas están pensados para todos los niveles, desde principiantes hasta atletas avanzados. Tu primera sesión incluye una evaluación completa para adaptar todo a tu punto de partida.',
   },
   {
     id: 2,
-    question: 'What does each membership include?',
-    answer: 'Every membership includes full gym floor access, all group classes, locker rooms, and WiFi. Higher tiers add personal coaching sessions, nutrition planning, recovery zones, and guest passes.',
+    question: '¿Qué incluye cada membresía?',
+    answer: 'Todas incluyen acceso total a la sala, todas las clases grupales, vestuarios y WiFi. Los planes superiores suman sesiones con entrenador, plan nutricional, zona de recuperación y pases de invitado.',
   },
   {
     id: 3,
-    question: 'Do you offer a free trial?',
-    answer: 'Yes. We offer a 7-day free trial with full access to the gym and classes. No credit card required. Just walk in, and we will set you up.',
+    question: '¿Tienen prueba gratuita?',
+    answer: 'Sí. Prueba 7 días gratis con acceso total al gimnasio y las clases. Sin tarjeta de crédito. Acércate y te activamos en el momento.',
   },
   {
     id: 4,
-    question: 'Can I train with a personal coach?',
-    answer: 'Absolutely. Our certified trainers offer one-on-one sessions tailored to your specific goals. You can book sessions through the app or at the front desk.',
+    question: '¿Puedo entrenar con un entrenador personal?',
+    answer: 'Claro. Nuestros entrenadores certificados ofrecen sesiones individuales adaptadas a tu objetivo. Puedes reservar por la app o en recepción.',
   },
   {
     id: 5,
-    question: 'What are your opening hours?',
-    answer: 'We are open Monday through Saturday from 5:30 AM to 10:00 PM, and Sundays from 6:00 AM to 1:00 PM. Pro and Elite members have 24/7 access.',
+    question: '¿Cuáles son los horarios?',
+    answer: 'Abrimos de lunes a sábado de 5:30 AM a 10:00 PM. Los socios Pro y Élite tienen acceso 24/7.',
   },
   {
     id: 6,
-    question: 'What should I bring to my first session?',
-    answer: 'Comfortable workout clothes, athletic shoes, a water bottle, and a positive attitude. We provide towels and all the equipment you need.',
+    question: '¿Qué llevo a mi primera sesión?',
+    answer: 'Ropa cómoda, zapatillas, botella de agua y actitud. Las toallas y todo el equipo los ponemos nosotros.',
   },
   {
     id: 7,
-    question: 'Can I change or cancel my membership?',
-    answer: 'Yes. All our plans are flexible with no long-term lock-in. You can upgrade, downgrade, or cancel anytime through your account or at the front desk.',
+    question: '¿Puedo cambiar o cancelar mi membresía?',
+    answer: 'Sí. Todos los planes son flexibles y sin permanencia. Puedes subir, bajar o cancelar cuando quieras desde tu cuenta o en recepción.',
   },
   {
     id: 8,
-    question: 'Do you have programs for beginners?',
-    answer: 'We do. Our Beginner Foundation program guides you through proper form, routine structure, and nutrition basics over four weeks with dedicated coaching support.',
+    question: '¿Tienen programas para principiantes?',
+    answer: 'Sí. Nuestro programa inicial te guía en técnica, estructura de rutina y nutrición básica durante cuatro semanas, con acompañamiento dedicado.',
   },
 ];
 
 export const scheduleData = [
   {
-    day: 'MON',
+    day: 'LUN',
     classes: [
-      { id: 1, time: '06:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 2, time: '07:30', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '45 MIN', level: 'INTERMEDIATE' },
-      { id: 3, time: '09:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 4, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'ALL LEVELS' },
-      { id: 5, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
-      { id: 6, time: '19:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 1, time: '06:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 2, time: '07:30', program: 'ENTRENAMIENTO FUNCIONAL', trainer: 'Elena Rostova', duration: '45 MIN', level: 'INTERMEDIO' },
+      { id: 3, time: '09:00', program: 'YOGA Y BIENESTAR', trainer: 'Sarah Chen', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 4, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 5, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'AVANZADO' },
+      { id: 6, time: '19:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
     ],
   },
   {
-    day: 'TUE',
+    day: 'MAR',
     classes: [
-      { id: 7, time: '06:30', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '45 MIN', level: 'ALL LEVELS' },
-      { id: 8, time: '08:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'BEGINNER' },
-      { id: 9, time: '10:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 10, time: '16:00', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '45 MIN', level: 'ALL LEVELS' },
-      { id: 11, time: '18:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'INTERMEDIATE' },
+      { id: 7, time: '06:30', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '45 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 8, time: '08:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'PRINCIPIANTE' },
+      { id: 9, time: '10:00', program: 'YOGA Y BIENESTAR', trainer: 'Sarah Chen', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 10, time: '16:00', program: 'ENTRENAMIENTO FUNCIONAL', trainer: 'Elena Rostova', duration: '45 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 11, time: '18:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'INTERMEDIO' },
     ],
   },
   {
-    day: 'WED',
+    day: 'MIÉ',
     classes: [
-      { id: 12, time: '06:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 13, time: '07:30', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '45 MIN', level: 'BEGINNER' },
-      { id: 14, time: '09:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 15, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'INTERMEDIATE' },
-      { id: 16, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
-      { id: 17, time: '19:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 12, time: '06:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 13, time: '07:30', program: 'ENTRENAMIENTO FUNCIONAL', trainer: 'Elena Rostova', duration: '45 MIN', level: 'PRINCIPIANTE' },
+      { id: 14, time: '09:00', program: 'YOGA Y BIENESTAR', trainer: 'Sarah Chen', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 15, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'INTERMEDIO' },
+      { id: 16, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'AVANZADO' },
+      { id: 17, time: '19:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
     ],
   },
   {
-    day: 'THU',
+    day: 'JUE',
     classes: [
-      { id: 18, time: '06:30', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '45 MIN', level: 'ALL LEVELS' },
-      { id: 19, time: '08:00', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '60 MIN', level: 'INTERMEDIATE' },
-      { id: 20, time: '10:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 21, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
-      { id: 22, time: '19:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 18, time: '06:30', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '45 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 19, time: '08:00', program: 'ENTRENAMIENTO FUNCIONAL', trainer: 'Elena Rostova', duration: '60 MIN', level: 'INTERMEDIO' },
+      { id: 20, time: '10:00', program: 'YOGA Y BIENESTAR', trainer: 'Sarah Chen', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 21, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'AVANZADO' },
+      { id: 22, time: '19:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
     ],
   },
   {
-    day: 'FRI',
+    day: 'VIE',
     classes: [
-      { id: 23, time: '06:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 24, time: '07:30', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '45 MIN', level: 'ALL LEVELS' },
-      { id: 25, time: '09:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '60 MIN', level: 'BEGINNER' },
-      { id: 26, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'ALL LEVELS' },
-      { id: 27, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
-      { id: 28, time: '19:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'INTERMEDIATE' },
+      { id: 23, time: '06:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 24, time: '07:30', program: 'ENTRENAMIENTO FUNCIONAL', trainer: 'Elena Rostova', duration: '45 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 25, time: '09:00', program: 'YOGA Y BIENESTAR', trainer: 'Sarah Chen', duration: '60 MIN', level: 'PRINCIPIANTE' },
+      { id: 26, time: '12:00', program: 'HIIT CARDIO', trainer: 'Elena Rostova', duration: '30 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 27, time: '17:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'AVANZADO' },
+      { id: 28, time: '19:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'INTERMEDIO' },
     ],
   },
   {
-    day: 'SAT',
+    day: 'SÁB',
     classes: [
-      { id: 29, time: '07:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 30, time: '09:00', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 31, time: '11:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '75 MIN', level: 'ALL LEVELS' },
-      { id: 32, time: '14:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'ADVANCED' },
-      { id: 33, time: '16:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'BEGINNER' },
-    ],
-  },
-  {
-    day: 'SUN',
-    classes: [
-      { id: 34, time: '08:00', program: 'YOGA & WELLNESS', trainer: 'Sarah Chen', duration: '75 MIN', level: 'ALL LEVELS' },
-      { id: 35, time: '10:00', program: 'FUNCTIONAL TRAINING', trainer: 'Elena Rostova', duration: '60 MIN', level: 'ALL LEVELS' },
-      { id: 36, time: '12:00', program: 'STRENGTH TRAINING', trainer: 'Marcus Vance', duration: '60 MIN', level: 'ALL LEVELS' },
+      { id: 29, time: '07:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 30, time: '09:00', program: 'ENTRENAMIENTO FUNCIONAL', trainer: 'Elena Rostova', duration: '60 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 31, time: '11:00', program: 'YOGA Y BIENESTAR', trainer: 'Sarah Chen', duration: '75 MIN', level: 'TODOS LOS NIVELES' },
+      { id: 32, time: '14:00', program: 'POWERLIFTING', trainer: 'Jaxson Reed', duration: '75 MIN', level: 'AVANZADO' },
+      { id: 33, time: '16:00', program: 'ENTRENAMIENTO DE FUERZA', trainer: 'Marcus Vance', duration: '60 MIN', level: 'PRINCIPIANTE' },
     ],
   },
 ];

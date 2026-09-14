@@ -52,7 +52,7 @@ export function PricingCard({ tag, name, price, period, features, featured, badg
             : 'bg-white/5 border border-white/[0.06] text-white hover:border-white/[0.12] rounded-full'
         }`}
       >
-        JOIN NOW
+        Empezar ahora
       </a>
     </div>
   );

@@ -111,12 +111,12 @@ export function FAQ() {
               FAQ
             </p>
             <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight leading-[0.95] mb-4">
-              Common
+              Preguntas
               <br />
-              Questions.
+              frecuentes.
             </h2>
             <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-md">
-              Everything you need to know before starting your journey with us. Can&apos;t find what you&apos;re looking for? Reach out at the front desk or message us anytime.
+              Todo lo que necesitas saber antes de empezar con nosotros. ¿No encuentras lo que buscas? Habla con recepción o escríbenos cuando quieras.
             </p>
           </motion.div>
 

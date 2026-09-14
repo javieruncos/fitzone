@@ -34,7 +34,7 @@ export function Card({ image, alt, zone, title, description, href = '#', classNa
             </p>
           )}
           <span className="inline-flex items-center gap-2 text-white/80 sm:text-white/0 sm:group-hover:text-white/80 transition-colors duration-300 text-xs sm:text-sm font-medium">
-            Explore <ArrowRight size={14} />
+            Explorar <ArrowRight size={14} />
           </span>
         </div>
       </div>

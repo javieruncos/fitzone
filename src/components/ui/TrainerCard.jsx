@@ -4,7 +4,7 @@ export function TrainerCard({ name, role, image, socials = {} }) {
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={image}
-          alt={`${name} - ${role} at FitZone gym`}
+          alt={`${name} — ${role} en FitZone`}
           width="480"
           height="600"
           loading="lazy"
@@ -27,7 +27,7 @@ export function TrainerCard({ name, role, image, socials = {} }) {
               {socials.instagram && (
                 <a
                   href={socials.instagram}
-                  aria-label={`${name} on Instagram`}
+                  aria-label={`${name} en Instagram`}
                   className="min-h-[44px] min-w-[44px] flex items-center justify-center text-zinc-400 hover:text-white active:scale-[0.98] transition-[color,transform] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent rounded-md"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -40,7 +40,7 @@ export function TrainerCard({ name, role, image, socials = {} }) {
               {socials.tiktok && (
                 <a
                   href={socials.tiktok}
-                  aria-label={`${name} on TikTok`}
+                  aria-label={`${name} en TikTok`}
                   className="min-h-[44px] min-w-[44px] flex items-center justify-center text-zinc-400 hover:text-white active:scale-[0.98] transition-[color,transform] duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent rounded-md"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

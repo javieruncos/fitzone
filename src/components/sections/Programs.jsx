@@ -48,10 +48,10 @@ export function Programs() {
         {/* Header */}
         <div className="mb-8 sm:mb-10 text-left">
           <h2 className="text-white font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight leading-[0.95] mb-3">
-            Train. Focus. Achieve.
+            Entrena. Concéntrate. Supérate.
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed">
-            Structured training paths designed to push your limits. Every program engineered for results.
+            Rutas de entrenamiento estructuradas para superar tus límites. Cada programa está diseñado para dar resultados.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export function Programs() {
             >
               <Card
                 image={program.image}
-                alt={`${program.name || program.title} session at FitZone gym`}
+                alt={`${program.name || program.title} — sesión en FitZone`}
                 zone={program.zone}
                 title={program.name || program.title}
                 description={program.description}

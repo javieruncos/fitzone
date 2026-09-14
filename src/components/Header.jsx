@@ -49,7 +49,7 @@ export function Header() {
       </a>
 
       {/* Desktop navigation */}
-      <nav aria-label="Main navigation" className="hidden lg:flex items-center">
+      <nav aria-label="Navegación principal" className="hidden lg:flex items-center">
         <ul className="flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
             <li key={link.name}>
@@ -74,7 +74,7 @@ export function Header() {
         href="#membership"
         className="hidden lg:inline-flex items-center justify-center bg-gym-accent text-black font-bold text-xs tracking-wider uppercase px-6 py-2.5 rounded-full hover:bg-gym-accent-hover active:scale-[0.98] transition-[color,transform] duration-200 ease-out shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent"
       >
-        JOIN NOW
+        Empezar ahora
       </a>
 
       {/* Mobile menu button */}
@@ -82,7 +82,7 @@ export function Header() {
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-controls="mobile-menu"
-        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
         className="lg:hidden text-white min-h-[44px] min-w-[44px] inline-flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent rounded-md hover:text-gym-accent transition-colors"
       >
         {isOpen ? (
@@ -96,7 +96,7 @@ export function Header() {
       <div
         id="mobile-menu"
         role="region"
-        aria-label="Mobile navigation"
+        aria-label="Navegación móvil"
         className={`lg:hidden absolute top-full left-0 w-full bg-gym-dark/95 backdrop-blur-md border-b border-white/[0.06] overflow-hidden transition-all duration-300 ease-out motion-reduce:transition-none shadow-2xl ${
           isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}
@@ -125,7 +125,7 @@ export function Header() {
             onClick={() => setIsOpen(false)}
             className="mt-2 inline-flex items-center justify-center bg-gym-accent text-black font-bold text-xs tracking-wider uppercase px-6 py-3 rounded-full hover:bg-gym-accent-hover active:scale-[0.97] transition-all duration-200 w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent"
           >
-            JOIN NOW
+            Empezar ahora
           </a>
         </nav>
       </div>
