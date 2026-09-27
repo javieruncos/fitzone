@@ -52,6 +52,7 @@ export function Memberships() {
             <motion.div
               key={plan.id}
               variants={cardVariants}
+              className="h-full"
             >
               <PricingCard
                 tag={plan.tag}

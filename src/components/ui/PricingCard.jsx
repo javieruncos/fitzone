@@ -44,16 +44,18 @@ export function PricingCard({ tag, name, price, period, features, featured, badg
         </ul>
       </div>
 
-      <a
-        href="#membership"
-        className={`mt-auto min-h-[48px] flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-200 ease-out active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark ${
-          featured
-            ? 'bg-gym-accent text-black hover:bg-gym-accent-hover rounded-full'
-            : 'bg-white/5 border border-white/[0.06] text-white hover:border-white/[0.12] rounded-full'
-        }`}
-      >
-        Empezar ahora
-      </a>
+      <div className="pt-8 sm:pt-10 mt-auto">
+        <a
+          href="#membership"
+          className={`w-full min-h-[48px] flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-200 ease-out active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gym-accent focus-visible:ring-offset-2 focus-visible:ring-offset-gym-dark ${
+            featured
+              ? 'bg-gym-accent text-black hover:bg-gym-accent-hover rounded-full'
+              : 'bg-white/5 border border-white/[0.06] text-white hover:border-white/[0.12] rounded-full'
+          }`}
+        >
+          Empezar ahora
+        </a>
+      </div>
     </div>
   );
 }
