@@ -411,6 +411,52 @@ No considerar una tarea terminada únicamente porque el código fue modificado.
 
 ---
 
+### Paleta de Colores
+Utilizar la paleta configurada en `src/index.css` basada en variables y clases utilitarias de Tailwind CSS:
+- **Fondo principal:** `bg-neutral-950` (`#0a0a0a`)
+- **Superficies y Tarjetas:** `bg-neutral-900` (`#141414`) con bordes `border-neutral-800`
+- **Acento Primario (Dorado/Amarillo):** `bg-yellow-500` / `text-yellow-500` (`#ffb800`)
+- **Texto Principal:** `text-white`
+- **Texto Secundario:** `text-zinc-400` / `text-neutral-400`
+
+### Tipografía y Formato
+- **Títulos y Subtítulos:** Usar mayúsculas (`uppercase`) y espaciado entre letras (`tracking-wider` o `tracking-tight` para encabezados grandes).
+- **Jerarquía:**
+  - Antetítulos / Tags: Texto pequeño en amarillo dorado (`text-yellow-500 font-semibold text-sm`).
+  - Títulos principales: Texto grande en blanco con resaltados clave en amarillo primario (`font-bold text-4xl lg:text-6xl`).
+
+### Estructura de Secciones a Desarrollar
+1. **Header (`src/components/Header.jsx`):**
+   - Logo `FITZONE` con icono de mancuerna/ondas.
+   - Navegación central activa con indicador inferior amarillo.
+   - Botón CTA `JOIN NOW` a la derecha.
+
+2. **Hero Section (`src/components/Hero.jsx`):**
+   - Layout de 2 columnas (`grid-cols-1 lg:grid-cols-2`).
+   - Columna izquierda: Antetítulo, título XXL (`BECOME YOUR BEST`), texto descriptivo y botones de acción (`JOIN NOW ->` y `WATCH VIDEO`).
+   - Columna derecha: Imagen de atleta entrenando integrada sobre fondo oscuro.
+
+3. **Features Bar (`src/components/Features.jsx`):**
+   - Contenedor flotante de 4 columnas (`grid-cols-1 md:grid-cols-2 lg:grid-cols-4`).
+   - Bloques con icono outline amarillo, título corto en mayúsculas y descripción.
+
+4. **Programs Section (`src/components/Programs.jsx`):**
+   - Encabezado centrado (`OUR PROGRAMS` / `TRAIN. FOCUS. ACHIEVE.`).
+   - Grid de 4 tarjetas con imagen superior, icono, título, descripción y enlace `LEARN MORE ->`.
+
+5. **About Us Section (`src/components/About.jsx`):**
+   - Grid de 2 columnas: Imagen del interior del gimnasio + texto institucional con CTA `JOIN OUR COMMUNITY ->`.
+
+6. **Footer / Quick Info (`src/components/Footer.jsx`):**
+   - Franja inferior con 4 datos de contacto: Dirección, Teléfono, Email y Horarios de atención.
+
+### Directivas Visuales para Componentes
+- **Tarjetas:** Fondo `bg-neutral-900`, borde `border border-neutral-800`, bordes redondeados `rounded-xl` y padding interno consistente (`p-6`).
+- **Botones:**
+  - Principal: Fondo amarillo `bg-yellow-500`, texto negro `text-black font-bold`, efecto hover `hover:bg-yellow-400`.
+  - Secundario: Transparente con texto blanco e icono rodeado `border border-white/20`.
+- **Microinteracciones:** Transiciones fluidas en hover para botones y leve escalado suave en las imágenes de las tarjetas (`group-hover:scale-105 transition-transform duration-300`).
+
 ## 19. Regla Principal
 
 Antes de implementar cualquier cambio, seguir este orden:
